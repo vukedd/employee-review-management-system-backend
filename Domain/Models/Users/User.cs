@@ -1,11 +1,12 @@
-﻿using Domain.Enums;
+﻿using Domain.Enums.User;
+using Domain.Models.Memberships;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Models
+namespace Domain.Models.Users
 {
     public class User
     {
@@ -16,14 +17,16 @@ namespace Domain.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public Role Role { get; set; }
+        public ICollection<Membership> Memberships { get; set; } = new List<Membership>();
+
         public User(string username, string password, string email, string firstName, string lastName, Role role)
         {
-            this.Username = username;
-            this.Password = password;   
-            this.Email = email;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Role = role;
+            Username = username;
+            Password = password;   
+            Email = email;
+            FirstName = firstName;
+            LastName = lastName;
+            Role = role;
         }
     }
 }

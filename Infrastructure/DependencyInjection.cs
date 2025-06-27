@@ -1,0 +1,34 @@
+﻿using Infrastructure.Persistance;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Infrastructure
+{
+    // This class represents a configuration module for the infrastructure layer which has to
+    // be executed to make the infrastructure layer build succesfully, we get the connection string
+    // and use it to establish the connection between EF and the database, and inject components into
+    // their interfaces,
+    public static class DependencyInjection
+    {
+        public static IServiceCollection RegisterInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        {
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(connectionString, b =>
+                    b.MigrationsAssembly(typeof(DependencyInjection).Assembly.FullName));
+            });
+
+            services.AddScoped<Application.Common.Repositories.IEvaluationPeriodRepository, Persistance.Evaluations.EvaluationPeriodRepository>();
+            
+            return services;
+        }
+    }
+}

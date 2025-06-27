@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Enums
+namespace Domain.Enums.Question
 {
-    public enum Role
+    public enum QuestionType
     {
-        MANAGER, EMPLOYEE
+        SCALAR = 0, TEXT = 0
     }
 }

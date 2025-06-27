@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Enums
+namespace Domain.Enums.Response
 {
-    public enum QuestionType
+    public enum ResponseType
     {
         SCALAR, TEXT
     }

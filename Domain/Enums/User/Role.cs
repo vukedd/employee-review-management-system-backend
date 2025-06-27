@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Enums
+namespace Domain.Enums.User
 {
-    public enum ResponseType
+    public enum Role
+
     {
-        SCALAR, TEXT
+        MANAGER = 0, EMPLOYEE = 1
     }
 }
