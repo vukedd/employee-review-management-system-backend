@@ -28,5 +28,10 @@ namespace Infrastructure.Persistance.Evaluations
         {
             return await _context.EvaluationsPeriods.Select(ep => ep).ToListAsync();
         }
+
+        public async Task<EvaluationPeriod?> GetEvaluationPeriodById(long evaluationPeriodId)
+        {
+            return await _context.EvaluationsPeriods.Where(ep => ep.Id == evaluationPeriodId).FirstOrDefaultAsync();
+        }
     }
 }
