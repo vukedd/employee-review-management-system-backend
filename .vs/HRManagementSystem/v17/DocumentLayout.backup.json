@@ -3,40 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\presentation\\controllers\\evaluationperiodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\evaluationperiodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\infrastructure\\persistance\\evaluations\\evaluationperiodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistance\\evaluations\\evaluationperiodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\presentation\\mappers\\evaluations\\evaluationperiodmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\mappers\\evaluations\\evaluationperiodmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\presentation\\mappers\\evaluationperiod\\evaluationperiodmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\mappers\\evaluationperiod\\evaluationperiodmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\presentation\\contracts\\request\\evaluations\\get\\getevaluationperiodbyidcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\request\\evaluations\\get\\getevaluationperiodbyidcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\presentation\\endpoints\\evaluationperiod\\edit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\endpoints\\evaluationperiod\\edit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\application\\queries\\evaluations\\getevaluationperiodbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\queries\\evaluations\\getevaluationperiodbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\application\\commands\\evaluations\\editevaluationperiodcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\commands\\evaluations\\editevaluationperiodcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\application\\common\\repositories\\ievaluationperiodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\common\\repositories\\ievaluationperiodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\presentation\\contracts\\response\\evaluations\\create\\createevaluationperiodresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\response\\evaluations\\create\\createevaluationperiodresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\application\\commands\\evaluations\\createevaluationperiodcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\commands\\evaluations\\createevaluationperiodcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\presentation\\contracts\\request\\evaluations\\create\\createevaluationperiodcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\request\\evaluations\\create\\createevaluationperiodcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\presentation\\contracts\\response\\evaluations\\get\\getevaluationperiodbyidresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\response\\evaluations\\get\\getevaluationperiodbyidresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\source\\repos\\hrmanagementsystem\\presentation\\endpoints\\evaluationperiod\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\endpoints\\evaluationperiod\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,19 +34,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CreateEvaluationPeriodResponse.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Contracts\\Response\\Evaluations\\Create\\CreateEvaluationPeriodResponse.cs",
-              "RelativeDocumentMoniker": "Presentation\\Contracts\\Response\\Evaluations\\Create\\CreateEvaluationPeriodResponse.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Contracts\\Response\\Evaluations\\Create\\CreateEvaluationPeriodResponse.cs",
-              "RelativeToolTip": "Presentation\\Contracts\\Response\\Evaluations\\Create\\CreateEvaluationPeriodResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "EvaluationPeriodRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Infrastructure\\Persistance\\Evaluations\\EvaluationPeriodRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistance\\Evaluations\\EvaluationPeriodRepository.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Infrastructure\\Persistance\\Evaluations\\EvaluationPeriodRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Persistance\\Evaluations\\EvaluationPeriodRepository.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwD4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T12:39:23.146Z",
+              "WhenOpened": "2025-06-29T15:13:01.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EvaluationPeriodMapper.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Mappers\\EvaluationPeriod\\EvaluationPeriodMapper.cs",
+              "RelativeDocumentMoniker": "Presentation\\Mappers\\EvaluationPeriod\\EvaluationPeriodMapper.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Mappers\\EvaluationPeriod\\EvaluationPeriodMapper.cs",
+              "RelativeToolTip": "Presentation\\Mappers\\EvaluationPeriod\\EvaluationPeriodMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwDkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T15:11:14.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Endpoints\\EvaluationPeriod\\Create.cs",
+              "RelativeDocumentMoniker": "Presentation\\Endpoints\\EvaluationPeriod\\Create.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Endpoints\\EvaluationPeriod\\Create.cs",
+              "RelativeToolTip": "Presentation\\Endpoints\\EvaluationPeriod\\Create.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T15:02:24.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Endpoints\\EvaluationPeriod\\Edit.cs",
+              "RelativeDocumentMoniker": "Presentation\\Endpoints\\EvaluationPeriod\\Edit.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Endpoints\\EvaluationPeriod\\Edit.cs",
+              "RelativeToolTip": "Presentation\\Endpoints\\EvaluationPeriod\\Edit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T14:58:45.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EditEvaluationPeriodCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Commands\\Evaluations\\EditEvaluationPeriodCommandHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Commands\\Evaluations\\EditEvaluationPeriodCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Commands\\Evaluations\\EditEvaluationPeriodCommandHandler.cs",
+              "RelativeToolTip": "Application\\Commands\\Evaluations\\EditEvaluationPeriodCommandHandler.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAvwB8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T14:08:11.934Z",
               "EditorCaption": ""
             },
             {
@@ -69,100 +113,9 @@
               "RelativeDocumentMoniker": "Application\\Common\\Repositories\\IEvaluationPeriodRepository.cs",
               "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Common\\Repositories\\IEvaluationPeriodRepository.cs",
               "RelativeToolTip": "Application\\Common\\Repositories\\IEvaluationPeriodRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T12:35:45.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetEvaluationPeriodByIdQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Queries\\Evaluations\\GetEvaluationPeriodByIdQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Queries\\Evaluations\\GetEvaluationPeriodByIdQuery.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Queries\\Evaluations\\GetEvaluationPeriodByIdQuery.cs",
-              "RelativeToolTip": "Application\\Queries\\Evaluations\\GetEvaluationPeriodByIdQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBsAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T12:08:10.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EvaluationPeriodController.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Controllers\\EvaluationPeriodController.cs",
-              "RelativeDocumentMoniker": "Presentation\\Controllers\\EvaluationPeriodController.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Controllers\\EvaluationPeriodController.cs",
-              "RelativeToolTip": "Presentation\\Controllers\\EvaluationPeriodController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T22:43:33.773Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EvaluationPeriodMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Mappers\\Evaluations\\EvaluationPeriodMapper.cs",
-              "RelativeDocumentMoniker": "Presentation\\Mappers\\Evaluations\\EvaluationPeriodMapper.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Mappers\\Evaluations\\EvaluationPeriodMapper.cs",
-              "RelativeToolTip": "Presentation\\Mappers\\Evaluations\\EvaluationPeriodMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T22:45:36.298Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetEvaluationPeriodByIdContract.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Contracts\\Request\\Evaluations\\Get\\GetEvaluationPeriodByIdContract.cs",
-              "RelativeDocumentMoniker": "Presentation\\Contracts\\Request\\Evaluations\\Get\\GetEvaluationPeriodByIdContract.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Contracts\\Request\\Evaluations\\Get\\GetEvaluationPeriodByIdContract.cs",
-              "RelativeToolTip": "Presentation\\Contracts\\Request\\Evaluations\\Get\\GetEvaluationPeriodByIdContract.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T12:39:14.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreateEvaluationPeriodCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Commands\\Evaluations\\CreateEvaluationPeriodCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Commands\\Evaluations\\CreateEvaluationPeriodCommand.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Commands\\Evaluations\\CreateEvaluationPeriodCommand.cs",
-              "RelativeToolTip": "Application\\Commands\\Evaluations\\CreateEvaluationPeriodCommand.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAvwCAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T22:43:59.303Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CreateEvaluationPeriodContract.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Contracts\\Request\\Evaluations\\Create\\CreateEvaluationPeriodContract.cs",
-              "RelativeDocumentMoniker": "Presentation\\Contracts\\Request\\Evaluations\\Create\\CreateEvaluationPeriodContract.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Contracts\\Request\\Evaluations\\Create\\CreateEvaluationPeriodContract.cs*",
-              "RelativeToolTip": "Presentation\\Contracts\\Request\\Evaluations\\Create\\CreateEvaluationPeriodContract.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T12:39:15.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GetEvaluationPeriodByIdResponse.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Contracts\\Response\\Evaluations\\Get\\GetEvaluationPeriodByIdResponse.cs",
-              "RelativeDocumentMoniker": "Presentation\\Contracts\\Response\\Evaluations\\Get\\GetEvaluationPeriodByIdResponse.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Contracts\\Response\\Evaluations\\Get\\GetEvaluationPeriodByIdResponse.cs",
-              "RelativeToolTip": "Presentation\\Contracts\\Response\\Evaluations\\Get\\GetEvaluationPeriodByIdResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T12:29:59.4Z",
+              "WhenOpened": "2025-06-29T14:02:18.292Z",
               "EditorCaption": ""
             }
           ]

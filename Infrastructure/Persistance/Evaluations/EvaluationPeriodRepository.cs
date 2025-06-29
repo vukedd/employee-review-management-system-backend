@@ -3,6 +3,7 @@ using Domain.Models.Evaluations;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,14 +25,42 @@ namespace Infrastructure.Persistance.Evaluations
             return newEvaluationPeriod.Entity;
         }
 
-        public async Task<ICollection<EvaluationPeriod>> GetAllEvaluationPeriods()
+        public async Task<EvaluationPeriod?> GetEvaluationPeriodById(long evaluationPeriodId)
+        {
+            return await _context.EvaluationsPeriods.Where(ep => ep.Id == evaluationPeriodId).FirstOrDefaultAsync();
+        }
+
+        public async Task<IEnumerable<EvaluationPeriod>> GetAllEvaluationPeriods()
         {
             return await _context.EvaluationsPeriods.Select(ep => ep).ToListAsync();
         }
 
-        public async Task<EvaluationPeriod?> GetEvaluationPeriodById(long evaluationPeriodId)
+        public async Task<EvaluationPeriod?> DeleteEvaluationPeriodById(long evaluationPeriodId)
         {
-            return await _context.EvaluationsPeriods.Where(ep => ep.Id == evaluationPeriodId).FirstOrDefaultAsync();
+            var evaluationPeriodForDeletion = await _context.EvaluationsPeriods.Where(ep => ep.Id == evaluationPeriodId).FirstOrDefaultAsync();
+
+            if (evaluationPeriodForDeletion != null)
+            {
+                _context.Remove(evaluationPeriodForDeletion);
+                await _context.SaveChangesAsync();
+            }
+
+            return evaluationPeriodForDeletion;
+        }
+
+        public async Task<EvaluationPeriod?> EditEvaluationPeriodById(long evaluationPeriodId, EvaluationPeriod evaluationPeriod)
+        {
+            var evaluationPeriodForEdit = await _context.EvaluationsPeriods.Where(ep => ep.Id == evaluationPeriodId).FirstOrDefaultAsync();
+            if (evaluationPeriodForEdit != null)
+            {
+                evaluationPeriodForEdit.StartDate = evaluationPeriod.StartDate;
+                evaluationPeriodForEdit.EndDate = evaluationPeriod.EndDate;
+                evaluationPeriodForEdit.Name = evaluationPeriod.Name;
+                evaluationPeriod.Description = evaluationPeriod.Description;
+                await _context.SaveChangesAsync();
+            }
+
+            return evaluationPeriodForEdit;
         }
     }
 }

@@ -21,5 +21,16 @@ namespace Application.Mappers.Evaluations
                 Description = command.Description,
             };
         }
+
+        public static EvaluationPeriod ToDomainEntity(this EditEvaluationPeriodCommand command)
+        {
+            return new EvaluationPeriod
+            {
+                StartDate = command.StartDate,
+                EndDate = command.EndDate,
+                Name = command.Name,
+                Description = command.Description,
+            };
+        }
     }
 }

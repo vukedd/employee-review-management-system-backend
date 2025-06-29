@@ -1,31 +1,41 @@
 using Infrastructure;
 using Application;
+using Presentation.ExceptionHandling;
+using FastEndpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register infrastructure (EF) and Application(MediatR) configurations
-builder.Services.RegisterApplication().RegisterInfrastructure(builder.Configuration);
+// Add FastEndpoints services
+builder.Services.AddFastEndpoints();
 
-// Add services to the container.
-builder.Services.AddControllers();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Exception middleware
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
+// Register Application and Infrastructure layers
+builder.Services.RegisterApplication()
+                .RegisterInfrastructure(builder.Configuration);
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseRouting(); 
 
-app.UseAuthorization();
+app.UseFastEndpoints(c =>
+{
+    c.Endpoints.RoutePrefix = "api";
+});
 
-app.MapControllers();
 
 app.Run();

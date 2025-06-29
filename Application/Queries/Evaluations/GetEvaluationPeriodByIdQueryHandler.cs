@@ -1,9 +1,11 @@
 ﻿using Application.Commands.Evaluations;
+using Application.Common.Exceptions;
 using Application.Common.Repositories;
 using Domain.Models.Evaluations;
 using MediatR;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,11 @@ namespace Application.Queries.Evaluations
         public async Task<EvaluationPeriod> Handle(GetEvaluationPeriodByIdQuery request, CancellationToken cancellationToken)
         {
             var evaluationPeriod = await _evaluationPeriodRepository.GetEvaluationPeriodById(request.evaluationPeriodId);
+
+            if (evaluationPeriod == null)
+            {
+                throw new NotFoundException($"An evalution period with the id: {request.evaluationPeriodId} hasn't been found!");
+            }
             return evaluationPeriod;
         }
     }
