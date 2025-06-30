@@ -8,6 +8,6 @@ namespace Domain.Enums.Evaluation
 {
     public enum EvaluationType
     {
-        SELF, PEER, LEAD
+        SELF = 0, PEER = 1, LEAD = 2
     }
 }

@@ -8,6 +8,6 @@ namespace Domain.Enums.Feedback
 {
     public enum Visibility
     {
-        PRIVATE, PROTECTED, PUBLIC
+        PRIVATE = 0, PROTECTED = 1, PUBLIC = 2
     }
 }

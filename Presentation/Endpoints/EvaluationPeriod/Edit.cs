@@ -1,10 +1,9 @@
-﻿using Application.Commands.Evaluations;
-using FastEndpoints;
+﻿using FastEndpoints;
 using MediatR;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Presentation.Contracts.Request.EvaluationPeriod;
 using Presentation.Contracts.Response.EvaluationPeriod.Edit;
-using Presentation.Mappers.Evaluations;
+using Presentation.Mappers.EvaluationPeriod;
 
 namespace Presentation.Endpoints.EvaluationPeriod
 {
@@ -18,7 +17,7 @@ namespace Presentation.Endpoints.EvaluationPeriod
 
         public override void Configure()
         {
-            Put("evaluationPeriod/{id}");
+            Put("evaluationPeriod/edit/{id}");
             AllowAnonymous();
         }
 

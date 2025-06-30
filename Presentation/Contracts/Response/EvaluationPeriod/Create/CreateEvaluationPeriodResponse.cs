@@ -1,4 +1,4 @@
-﻿namespace Presentation.Contracts.Response.Evaluations.Create
+﻿namespace Presentation.Contracts.Response.EvaluationPeriod.Create
 {
     public class CreateEvaluationPeriodResponse
     {

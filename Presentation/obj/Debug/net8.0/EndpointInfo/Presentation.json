@@ -1,23 +1,29 @@
 {
-  "openapi": "3.0.1",
+  "x-generator": "NSwag v14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
   "info": {
     "title": "Presentation",
-    "version": "1.0"
+    "version": "1.0.0"
   },
   "paths": {
-    "/api/evaluationPeriod": {
+    "/api/register": {
       "post": {
         "tags": [
-          "Presentation"
+          "Register"
         ],
+        "operationId": "PresentationEndpointsUserRegister",
         "requestBody": {
+          "x-name": "RegisterUserContract",
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateEvaluationPeriodContract"
+                "$ref": "#/components/schemas/PresentationContractsRequestUserRegisterUserContract"
               }
             }
-          }
+          },
+          "required": true,
+          "x-position": 1
         },
         "responses": {
           "200": {
@@ -25,17 +31,159 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateEvaluationPeriodResponse"
+                  "$ref": "#/components/schemas/PresentationContractsResponseUserRegisterUserResponse"
                 }
               }
             }
           }
         }
-      },
+      }
+    },
+    "/api/evaluation/create": {
+      "post": {
+        "tags": [
+          "Evaluation"
+        ],
+        "operationId": "PresentationEndpointsEvaluationCreate",
+        "requestBody": {
+          "x-name": "CreateEvaluationContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestEvaluationCreateEvaluationContract"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseEvaluationCreateEvaluationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/evaluationPeriod/create": {
+      "post": {
+        "tags": [
+          "Evaluationperiod"
+        ],
+        "operationId": "PresentationEndpointsEvaluationPeriodCreate",
+        "requestBody": {
+          "x-name": "CreateEvaluationPeriodContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestEvaluationPeriodCreateEvaluationPeriodContract"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseEvaluationPeriodCreateCreateEvaluationPeriodResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/evaluationPeriod/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Evaluationperiod"
+        ],
+        "operationId": "PresentationEndpointsEvaluationPeriodDelete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseEvaluationPeriodDeleteDeleteEvaluationPeriodResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/evaluationPeriod/edit/{id}": {
+      "put": {
+        "tags": [
+          "Evaluationperiod"
+        ],
+        "operationId": "PresentationEndpointsEvaluationPeriodEdit",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "x-name": "EditEvaluationPeriodContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestEvaluationPeriodEditEvaluationPeriodContract"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseEvaluationPeriodEditEditEvaluationPeriodResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/evaluationPeriod": {
       "get": {
         "tags": [
-          "Presentation"
+          "Evaluationperiod"
         ],
+        "operationId": "PresentationEndpointsEvaluationPeriodGetAll",
         "responses": {
           "200": {
             "description": "Success",
@@ -44,7 +192,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/GetEvaluationPeriodResponse"
+                    "$ref": "#/components/schemas/PresentationContractsResponseEvaluationPeriodGetGetEvaluationPeriodResponse"
                   }
                 }
               }
@@ -54,52 +202,20 @@
       }
     },
     "/api/evaluationPeriod/{id}": {
-      "delete": {
-        "tags": [
-          "Presentation"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DeleteEvaluationPeriodResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Presentation"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EditEvaluationPeriodContract"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EditEvaluationPeriodResponse"
-                }
-              }
-            }
-          }
-        }
-      },
       "get": {
         "tags": [
-          "Presentation"
+          "Evaluationperiod"
+        ],
+        "operationId": "PresentationEndpointsEvaluationPeriodGetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -107,7 +223,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetEvaluationPeriodByIdResponse"
+                  "$ref": "#/components/schemas/PresentationContractsResponseEvaluationPeriodGetGetEvaluationPeriodByIdResponse"
                 }
               }
             }
@@ -118,105 +234,164 @@
   },
   "components": {
     "schemas": {
-      "CreateEvaluationPeriodContract": {
+      "PresentationContractsResponseUserRegisterUserResponse": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
-          "startDate": {
-            "$ref": "#/components/schemas/DateOnly"
+          "username": {
+            "type": "string"
           },
-          "endDate": {
-            "$ref": "#/components/schemas/DateOnly"
+          "password": {
+            "type": "string"
           },
-          "name": {
-            "type": "string",
-            "nullable": true
+          "email": {
+            "type": "string"
           },
-          "description": {
-            "type": "string",
-            "nullable": true
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
           }
-        },
-        "additionalProperties": false
+        }
       },
-      "CreateEvaluationPeriodResponse": {
+      "PresentationContractsRequestUserRegisterUserContract": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
-          "startDate": {
-            "$ref": "#/components/schemas/DateOnly"
+          "username": {
+            "type": "string"
           },
-          "endDate": {
-            "$ref": "#/components/schemas/DateOnly"
+          "password": {
+            "type": "string"
           },
-          "name": {
-            "type": "string",
-            "nullable": true
+          "email": {
+            "type": "string"
           },
-          "description": {
-            "type": "string",
-            "nullable": true
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
           }
-        },
-        "additionalProperties": false
+        }
       },
-      "DateOnly": {
+      "PresentationContractsResponseEvaluationCreateEvaluationResponse": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
-          "year": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
+          "type": {
+            "$ref": "#/components/schemas/DomainEnumsEvaluationEvaluationType"
           },
-          "month": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "day": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "dayOfWeek": {
-            "$ref": "#/components/schemas/DayOfWeek"
-          },
-          "dayOfYear": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "dayNumber": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PresentationContractsResponseQuestionCreateQuestionResponse"
+            }
           }
-        },
-        "additionalProperties": false
+        }
       },
-      "DayOfWeek": {
+      "DomainEnumsEvaluationEvaluationType": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "SELF",
+          "PEER",
+          "LEAD"
+        ],
+        "enum": [
+          0,
+          1,
+          2
+        ]
+      },
+      "PresentationContractsResponseQuestionCreateQuestionResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DomainEnumsQuestionQuestionType"
+          },
+          "category": {
+            "$ref": "#/components/schemas/DomainEnumsQuestionQuestionCategory"
+          }
+        }
+      },
+      "DomainEnumsQuestionQuestionType": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "SCALAR",
+          "TEXT"
+        ],
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "DomainEnumsQuestionQuestionCategory": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "TEAMWORK",
+          "INITIATIVE",
+          "PROFESSIONALISM",
+          "COMMUNICATION",
+          "TECHNICAL_SKILLS"
+        ],
         "enum": [
           0,
           1,
           2,
           3,
-          4,
-          5,
-          6
-        ],
-        "type": "integer",
-        "format": "int32"
+          4
+        ]
       },
-      "DeleteEvaluationPeriodResponse": {
+      "PresentationContractsRequestEvaluationCreateEvaluationContract": {
         "type": "object",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/DomainEnumsEvaluationEvaluationType"
+          },
+          "questions": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/PresentationContractsRequestQuestionCreateQuestionContract"
+            }
+          }
+        }
       },
-      "EditEvaluationPeriodContract": {
+      "PresentationContractsRequestQuestionCreateQuestionContract": {
         "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DomainEnumsQuestionQuestionType"
+          },
+          "category": {
+            "$ref": "#/components/schemas/DomainEnumsQuestionQuestionCategory"
+          }
+        }
+      },
+      "PresentationContractsResponseEvaluationPeriodCreateCreateEvaluationPeriodResponse": {
+        "type": "object",
+        "additionalProperties": false,
         "properties": {
           "startDate": {
-            "$ref": "#/components/schemas/DateOnly"
+            "type": "string",
+            "format": "date"
           },
           "endDate": {
-            "$ref": "#/components/schemas/DateOnly"
+            "type": "string",
+            "format": "date"
           },
           "name": {
             "type": "string",
@@ -226,17 +401,19 @@
             "type": "string",
             "nullable": true
           }
-        },
-        "additionalProperties": false
+        }
       },
-      "EditEvaluationPeriodResponse": {
+      "PresentationContractsRequestEvaluationPeriodCreateEvaluationPeriodContract": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "startDate": {
-            "$ref": "#/components/schemas/DateOnly"
+            "type": "string",
+            "format": "date"
           },
           "endDate": {
-            "$ref": "#/components/schemas/DateOnly"
+            "type": "string",
+            "format": "date"
           },
           "name": {
             "type": "string",
@@ -246,17 +423,25 @@
             "type": "string",
             "nullable": true
           }
-        },
+        }
+      },
+      "PresentationContractsResponseEvaluationPeriodDeleteDeleteEvaluationPeriodResponse": {
+        "type": "object",
         "additionalProperties": false
       },
-      "GetEvaluationPeriodByIdResponse": {
+      "PresentationContractsResponseEvaluationPeriodEditEditEvaluationPeriodResponse": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "startDate": {
-            "$ref": "#/components/schemas/DateOnly"
+            "type": "string",
+            "format": "date",
+            "nullable": true
           },
           "endDate": {
-            "$ref": "#/components/schemas/DateOnly"
+            "type": "string",
+            "format": "date",
+            "nullable": true
           },
           "name": {
             "type": "string",
@@ -266,17 +451,19 @@
             "type": "string",
             "nullable": true
           }
-        },
-        "additionalProperties": false
+        }
       },
-      "GetEvaluationPeriodResponse": {
+      "PresentationContractsRequestEvaluationPeriodEditEvaluationPeriodContract": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "startDate": {
-            "$ref": "#/components/schemas/DateOnly"
+            "type": "string",
+            "format": "date"
           },
           "endDate": {
-            "$ref": "#/components/schemas/DateOnly"
+            "type": "string",
+            "format": "date"
           },
           "name": {
             "type": "string",
@@ -286,8 +473,59 @@
             "type": "string",
             "nullable": true
           }
-        },
-        "additionalProperties": false
+        }
+      },
+      "PresentationContractsResponseEvaluationPeriodGetGetEvaluationPeriodResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "PresentationContractsResponseEvaluationPeriodGetGetEvaluationPeriodByIdResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "JWTBearerAuth": {
+        "type": "http",
+        "description": "Enter a JWT token to authorize the requests...",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
       }
     }
   }

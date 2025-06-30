@@ -12,9 +12,9 @@ namespace Domain.Models.Evaluations
     {
         public long Id { get; set; }
         public EvaluationType Type { get; set; }
-        public ICollection<Question> Questions { get; set; }
-        public ICollection<ConcreteEvaluation> ConcreteEvaluations { get; set; }
-        public ICollection<EvaluationPeriodEvaluation> EvaluationPeriodEvaluations { get; set; }
+        public IEnumerable<Question> Questions { get; set; }
+        public IEnumerable<ConcreteEvaluation> ConcreteEvaluations { get; set; }
+        public IEnumerable<EvaluationPeriodEvaluation> EvaluationPeriodEvaluations { get; set; }
 
         public Evaluation()
         {

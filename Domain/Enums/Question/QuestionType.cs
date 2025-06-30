@@ -8,6 +8,6 @@ namespace Domain.Enums.Question
 {
     public enum QuestionType
     {
-        SCALAR = 0, TEXT = 0
+        SCALAR = 0, TEXT = 1
     }
 }

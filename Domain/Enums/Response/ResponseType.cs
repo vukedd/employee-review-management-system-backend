@@ -8,6 +8,6 @@ namespace Domain.Enums.Response
 {
     public enum ResponseType
     {
-        SCALAR, TEXT
+        SCALAR = 0, TEXT = 1
     }
 }

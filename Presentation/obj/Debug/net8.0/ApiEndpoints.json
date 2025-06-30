@@ -2,27 +2,27 @@
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
-    "RelativePath": "api/evaluationPeriod",
+    "RelativePath": "api/evaluation/create",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "CreateEvaluationPeriodContract",
-        "Type": "Presentation.Contracts.Request.EvaluationPeriod.CreateEvaluationPeriodContract",
+        "Name": "CreateEvaluationContract",
+        "Type": "Presentation.Contracts.Request.Evaluation.CreateEvaluationContract",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Presentation.Contracts.Response.Evaluations.Create.CreateEvaluationPeriodResponse",
+        "Type": "Presentation.Contracts.Response.Evaluation.CreateEvaluationResponse",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 200
       }
     ],
-    "EndpointName": "PresentationEndpointsEvaluationPeriodCreate"
+    "EndpointName": "PresentationEndpointsEvaluationCreate"
   },
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
@@ -47,6 +47,50 @@
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
     "RelativePath": "api/evaluationPeriod/{id}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Presentation.Contracts.Response.EvaluationPeriod.Get.GetEvaluationPeriodByIdResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "PresentationEndpointsEvaluationPeriodGetById"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/evaluationPeriod/create",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CreateEvaluationPeriodContract",
+        "Type": "Presentation.Contracts.Request.EvaluationPeriod.CreateEvaluationPeriodContract",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Presentation.Contracts.Response.EvaluationPeriod.Create.CreateEvaluationPeriodResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "PresentationEndpointsEvaluationPeriodCreate"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/evaluationPeriod/delete/{id}",
     "HttpMethod": "DELETE",
     "IsController": false,
     "Order": 0,
@@ -65,7 +109,7 @@
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
-    "RelativePath": "api/evaluationPeriod/{id}",
+    "RelativePath": "api/evaluationPeriod/edit/{id}",
     "HttpMethod": "PUT",
     "IsController": false,
     "Order": 0,
@@ -90,20 +134,26 @@
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
-    "RelativePath": "api/evaluationPeriod/{id}",
-    "HttpMethod": "GET",
+    "RelativePath": "api/register",
+    "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "RegisterUserContract",
+        "Type": "Presentation.Contracts.Request.User.RegisterUserContract",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "Presentation.Contracts.Response.Evaluations.Get.GetEvaluationPeriodByIdResponse",
+        "Type": "Presentation.Contracts.Response.User.RegisterUserResponse",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 200
       }
     ],
-    "EndpointName": "PresentationEndpointsEvaluationPeriodGetById"
+    "EndpointName": "PresentationEndpointsUserRegister"
   }
 ]

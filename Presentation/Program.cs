@@ -1,13 +1,15 @@
-using Infrastructure;
 using Application;
-using Presentation.ExceptionHandling;
 using FastEndpoints;
+using FastEndpoints.Swagger;
+using Infrastructure;
+using Microsoft.AspNetCore.Builder;
+using Presentation.ExceptionHandling;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add FastEndpoints services
-builder.Services.AddFastEndpoints();
-
+builder.Services.AddFastEndpoints()
+    .SwaggerDocument();
 
 // Exception middleware
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
@@ -17,25 +19,14 @@ builder.Services.RegisterApplication()
                 .RegisterInfrastructure(builder.Configuration);
 
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseRouting(); 
-
 app.UseFastEndpoints(c =>
 {
     c.Endpoints.RoutePrefix = "api";
-});
+}).UseSwaggerGen();
 
 
 app.Run();

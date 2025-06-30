@@ -23,7 +23,7 @@ namespace Infrastructure.Persistance
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Response> Responses { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<Domain.Models.Users.User> Users { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<Membership> Memberships { get; set; }
         public DbSet<EvaluationPeriodEvaluation> EvaluationPeriodEvaluations { get; set; }

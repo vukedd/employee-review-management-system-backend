@@ -1,4 +1,4 @@
-﻿namespace Presentation.Contracts.Response.Evaluations.Get
+﻿namespace Presentation.Contracts.Response.EvaluationPeriod.Get
 {
     public class GetEvaluationPeriodByIdResponse
     {

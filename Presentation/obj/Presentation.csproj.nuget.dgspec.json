@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Presentation.csproj": {}
+    "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Application.csproj": {
+    "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Thinkpad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\obj\\",
+        "outputPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Domain\\Domain.csproj"
+              "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Domain\\Domain.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Domain\\Domain.csproj": {
+    "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Thinkpad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -148,14 +148,14 @@
         }
       }
     },
-    "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Thinkpad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -176,11 +176,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Application.csproj"
+              "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Application.csproj"
               },
-              "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Domain\\Domain.csproj"
+              "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Domain\\Domain.csproj"
               }
             }
           }
@@ -201,6 +201,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -244,14 +248,14 @@
         }
       }
     },
-    "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Presentation.csproj": {
+    "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\Presentation.csproj",
+        "projectPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Presentation.csproj",
         "packagesPath": "C:\\Users\\Thinkpad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Presentation\\obj\\",
+        "outputPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -272,11 +276,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Application\\Application.csproj"
+              "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Application.csproj"
               },
-              "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Thinkpad\\source\\repos\\HRManagementSystem\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -301,6 +305,10 @@
               "target": "Package",
               "version": "[6.2.0, )"
             },
+            "FastEndpoints.Swagger": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.5.0, )"
@@ -318,10 +326,6 @@
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
               "version": "[9.0.6, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.0.6, )"
             }
           },
           "imports": [

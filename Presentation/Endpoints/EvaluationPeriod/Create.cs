@@ -1,8 +1,8 @@
 ﻿using FastEndpoints;
 using MediatR;
 using Presentation.Contracts.Request.EvaluationPeriod;
-using Presentation.Contracts.Response.Evaluations.Create;
-using Presentation.Mappers.Evaluations;
+using Presentation.Contracts.Response.EvaluationPeriod.Create;
+using Presentation.Mappers.EvaluationPeriod;
 
 namespace Presentation.Endpoints.EvaluationPeriod
 {
@@ -15,7 +15,7 @@ namespace Presentation.Endpoints.EvaluationPeriod
         }
         public override void Configure()
         {
-            Post("evaluationPeriod");
+            Post("evaluationPeriod/create");
             AllowAnonymous();
         }
 

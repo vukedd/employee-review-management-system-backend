@@ -1,5 +1,4 @@
-﻿using Application.Commands.Evaluations;
-using Application.Queries.Evaluations;
+﻿using Application.Commands.EvaluationPeriod;
 using FastEndpoints;
 using MediatR;
 using Presentation.Contracts.Response.EvaluationPeriod.Delete;
@@ -17,7 +16,7 @@ namespace Presentation.Endpoints.EvaluationPeriod
 
         public override void Configure()
         {
-            Delete("evaluationPeriod/{id}");
+            Delete("evaluationPeriod/delete/{id}");
             AllowAnonymous();
         }
 

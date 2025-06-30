@@ -1,8 +1,8 @@
-﻿using Application.Queries.Evaluations;
+﻿using Application.Queries.EvaluationPeriod;
 using FastEndpoints;
 using MediatR;
-using Presentation.Contracts.Response.Evaluations.Get;
-using Presentation.Mappers.Evaluations;
+using Presentation.Contracts.Response.EvaluationPeriod.Get;
+using Presentation.Mappers.EvaluationPeriod;
 
 namespace Presentation.Endpoints.EvaluationPeriod
 {
