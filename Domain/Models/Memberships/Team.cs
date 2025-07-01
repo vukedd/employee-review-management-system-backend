@@ -10,12 +10,7 @@ namespace Domain.Models.Memberships
     {
         public long Id { get;}
         public string Name { get; set; }
-        public ICollection<Membership> Memberships { get; set; } = new List<Membership>();
+        public List<Membership> Memberships { get; set; } = new List<Membership>();
 
-
-        public Team(string name)
-        {
-            Name = name;
-        }
     }
 }

@@ -2,14 +2,14 @@ using Application;
 using FastEndpoints;
 using FastEndpoints.Swagger;
 using Infrastructure;
-using Microsoft.AspNetCore.Builder;
 using Presentation.ExceptionHandling;
+using FastEndpoints.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add FastEndpoints services
-builder.Services.AddFastEndpoints()
-    .SwaggerDocument();
+builder.Services
+    .AddFastEndpoints();
 
 // Exception middleware
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
@@ -18,6 +18,10 @@ builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 builder.Services.RegisterApplication()
                 .RegisterInfrastructure(builder.Configuration);
 
+builder.Services
+    .AddAuthenticationJwtBearer(s => s.SigningKey = builder.Configuration["JWT:Key"])
+   .AddAuthorization()
+   .SwaggerDocument();
 
 var app = builder.Build();
 
@@ -26,7 +30,7 @@ app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseFastEndpoints(c =>
 {
     c.Endpoints.RoutePrefix = "api";
-}).UseSwaggerGen();
+}).UseSwaggerGen().UseAuthorization();
 
 
 app.Run();

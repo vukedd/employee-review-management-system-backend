@@ -17,7 +17,7 @@ namespace Domain.Models.Users
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public Role Role { get; set; }
-        public ICollection<Membership> Memberships { get; set; } = new List<Membership>();
+        public IEnumerable<Membership> Memberships { get; set; } = new List<Membership>();
 
         public User(string username, string password, string email, string firstName, string lastName, Role role)
         {

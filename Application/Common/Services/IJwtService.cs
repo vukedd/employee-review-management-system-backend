@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.Commands.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace Application.Common.Services
 {
     public interface IJwtService
     {
+        public Task<TokenResponse> GenerateTokensAsync(string username, string role);
     }
 }

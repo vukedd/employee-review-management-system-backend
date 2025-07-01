@@ -201,9 +201,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "BCrypt.Net-Core": {
+            "BCrypt.Net-Next": {
               "target": "Package",
-              "version": "[1.6.0, )"
+              "version": "[4.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -302,6 +302,10 @@
           "targetAlias": "net8.0",
           "dependencies": {
             "FastEndpoints": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "FastEndpoints.Security": {
               "target": "Package",
               "version": "[6.2.0, )"
             },

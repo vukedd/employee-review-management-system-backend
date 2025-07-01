@@ -21,6 +21,8 @@ namespace Presentation.ExceptionHandling
                 {
                     NotFoundException => (404, new { error = e.Message }),
                     ConflictException => (409, new { error = e.Message }),
+                    UnauthorizedException => (401, new {error = e.Message}),
+                    UnprocessableException => (422, new {error = e.Message}),
                     _ => (500, new { error = "An unexpected error has occurred please try again later!" }),
                 };
 

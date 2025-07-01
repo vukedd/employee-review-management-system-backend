@@ -21,8 +21,8 @@ namespace Presentation.Endpoints.EvaluationPeriod
 
         public override async Task HandleAsync(CreateEvaluationPeriodContract req, CancellationToken ct)
         {
-            var product = await _mediator.Send(req.ToCreateCommand(), ct);
-            await SendOkAsync(product.ToCreateResponse(), ct);
+            var evaluationPeriod = await _mediator.Send(req.ToCreateCommand(), ct);
+            await SendOkAsync(evaluationPeriod.ToCreateResponse(), ct);
         }
     }
 }

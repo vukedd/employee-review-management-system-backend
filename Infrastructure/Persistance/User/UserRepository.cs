@@ -1,6 +1,8 @@
 ﻿using Application.Common.Repositories;
+using Domain.Enums.User;
 using Domain.Models.Users;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Update.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,15 @@ namespace Infrastructure.Persistance.User
             return addedUser.Entity;
         }
 
+        public async Task<Role?> GetRoleByUserId(long id)
+        {
+            var user = await _context.Users.Where(u => u.Id == id).FirstOrDefaultAsync();
+            if (user == null)
+                return null;
+
+            return user.Role;
+        }
+
         public async Task<Domain.Models.Users.User?> GetUserByEmail(string email)
         {
             return await _context.Users.Where(u => u.Email == email).FirstOrDefaultAsync();
@@ -33,6 +44,11 @@ namespace Infrastructure.Persistance.User
         public async Task<Domain.Models.Users.User?> GetUserByUsername(string username)
         {
             return await _context.Users.Where(u => u.Username == username).FirstOrDefaultAsync();
+        }
+
+        public async Task<Domain.Models.Users.User?> GetUserById(long id)
+        {
+            return await _context.Users.Where(u => u.Id == id).FirstOrDefaultAsync();
         }
     }
 }

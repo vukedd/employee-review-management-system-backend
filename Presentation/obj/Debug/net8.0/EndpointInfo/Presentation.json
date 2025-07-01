@@ -6,6 +6,39 @@
     "version": "1.0.0"
   },
   "paths": {
+    "/api/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "operationId": "PresentationEndpointsUserLogin",
+        "requestBody": {
+          "x-name": "LoginUserContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestUserLoginUserContract"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationCommandsUserTokenResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/register": {
       "post": {
         "tags": [
@@ -39,6 +72,52 @@
         }
       }
     },
+    "/api/team/create": {
+      "post": {
+        "tags": [
+          "Team"
+        ],
+        "operationId": "PresentationEndpointsTeamCreate",
+        "requestBody": {
+          "x-name": "CreateTeamContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestTeamCreateTeamContract"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseTeamCreateTeamResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER"
+            ]
+          }
+        ]
+      }
+    },
     "/api/evaluation/create": {
       "post": {
         "tags": [
@@ -68,8 +147,21 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER"
+            ]
+          }
+        ]
       }
     },
     "/api/evaluationPeriod/create": {
@@ -234,7 +326,16 @@
   },
   "components": {
     "schemas": {
-      "PresentationContractsResponseUserRegisterUserResponse": {
+      "ApplicationCommandsUserTokenResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "accessToken": {
+            "type": "string"
+          }
+        }
+      },
+      "PresentationContractsRequestUserLoginUserContract": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -242,6 +343,15 @@
             "type": "string"
           },
           "password": {
+            "type": "string"
+          }
+        }
+      },
+      "PresentationContractsResponseUserRegisterUserResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "username": {
             "type": "string"
           },
           "email": {
@@ -273,6 +383,62 @@
           },
           "lastName": {
             "type": "string"
+          }
+        }
+      },
+      "PresentationContractsResponseTeamCreateTeamResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "memberships": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PresentationContractsResponseMembershipCreateMembershipResponse"
+            }
+          }
+        }
+      },
+      "PresentationContractsResponseMembershipCreateMembershipResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isTeamLead": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PresentationContractsRequestTeamCreateTeamContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "memberships": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PresentationContractsRequestMembershipCreateMembershipContract"
+            }
+          }
+        }
+      },
+      "PresentationContractsRequestMembershipCreateMembershipContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isTeamLead": {
+            "type": "boolean"
           }
         }
       },
