@@ -382,6 +382,52 @@
           }
         }
       }
+    },
+    "/api/concreteEvaluation/pending": {
+      "get": {
+        "tags": [
+          "Concreteevaluation"
+        ],
+        "operationId": "PresentationEndpointsConcreteEvaluationGetPendingByUsername",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PresentationContractsResponseConcreteEvaluationGetPendingEvaluationsByUsernameResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "EMPLOYEE"
+            ]
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -828,6 +874,31 @@
             "nullable": true
           }
         }
+      },
+      "PresentationContractsResponseConcreteEvaluationGetPendingEvaluationsByUsernameResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "evaluationType": {
+            "$ref": "#/components/schemas/DomainEnumsEvaluationEvaluationType"
+          },
+          "reviewee": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
+              }
+            ]
+          }
+        }
+      },
+      "PresentationContractsRequestConcreteEvaluationGetPendingEvaluationsByUsernameContract": {
+        "type": "object",
+        "additionalProperties": false
       }
     },
     "securitySchemes": {
