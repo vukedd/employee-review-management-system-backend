@@ -16,7 +16,7 @@ namespace Presentation.Endpoints.EvaluationPeriod
         public override void Configure()
         {
             Post("evaluationPeriod/create");
-            AllowAnonymous();
+            Roles("MANAGER");
         }
 
         public override async Task HandleAsync(CreateEvaluationPeriodContract req, CancellationToken ct)

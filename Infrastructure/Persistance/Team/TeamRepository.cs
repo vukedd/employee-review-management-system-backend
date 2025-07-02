@@ -24,6 +24,12 @@ namespace Infrastructure.Persistance.Team
             return addedTeam.Entity;
         }
 
+        public async Task<IEnumerable<Domain.Models.Memberships.Team>> GetAllTeams()
+        {
+            var teams = await _context.Teams.Include("Memberships.User").ToListAsync();
+            return teams;
+        }
+
         public async Task<Domain.Models.Memberships.Team?> GetTeamByName(string name)
         {
             return await _context.Teams.Where(t => t.Name == name).FirstOrDefaultAsync();

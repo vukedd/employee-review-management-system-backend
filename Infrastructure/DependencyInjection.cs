@@ -1,4 +1,5 @@
-﻿using Infrastructure.Persistance;
+﻿using Application.Common.Repositories;
+using Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +31,7 @@ namespace Infrastructure
             services.AddScoped<Application.Common.Repositories.IEvaluationRepository, Persistance.Evaluations.EvaluationRepository>();
             services.AddScoped<Application.Common.Repositories.IUserRepository, Persistance.User.UserRepository>();
             services.AddScoped<Application.Common.Repositories.ITeamRepository, Persistance.Team.TeamRepository>();
+            services.AddScoped<Application.Common.Repositories.IConcreteEvaluationRepository, Persistance.Evaluations.ConcreteEvaluationRepository>();
             services.AddScoped<Application.Common.Services.IPasswordHasher, Auth.PasswordHasher>();
             services.AddScoped<Application.Common.Services.IJwtService, Auth.JWTService>();
 

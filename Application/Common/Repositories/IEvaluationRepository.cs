@@ -10,5 +10,7 @@ namespace Application.Common.Repositories
     public interface IEvaluationRepository
     {
         public Task<Evaluation> CreateEvaluationAsync(Evaluation evaluation);
+        public Task<Evaluation?> GetEvaluationByIdAsync(long id);
+        public Task<List<Evaluation>> GetEvaluationByEvaluationPeriodIdAsync(long evaluationPeriodId);
     }
 }

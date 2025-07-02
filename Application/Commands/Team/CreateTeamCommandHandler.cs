@@ -26,7 +26,7 @@ namespace Application.Commands.Team
             var team = request.ToDomainEntity();
             var memberships = team.Memberships.ToList();
 
-            if (_teamRepository.GetTeamByName(team.Name) == null)
+            if (await _teamRepository.GetTeamByName(team.Name) != null)
                 throw new ConflictException("A team with the given name already exists!");
 
             var newTeam = new Domain.Models.Memberships.Team

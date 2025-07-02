@@ -41,7 +41,7 @@ CREATE TABLE memberships (
     Id bigint IDENTITY(1,1) NOT NULL,
     UserId bigint NOT NULL,
     TeamId bigint NOT NULL,
-    IsTeamLead tinyint NOT NULL,
+    IsTeamLead bit NOT NULL,
     CONSTRAINT PK_memberships PRIMARY KEY (Id),
     CONSTRAINT FK_memberships_users_UserId FOREIGN KEY (UserId) REFERENCES users(Id) ON DELETE CASCADE,
     CONSTRAINT FK_memberships_teams_TeamId FOREIGN KEY (TeamId) REFERENCES teams(Id) ON DELETE CASCADE

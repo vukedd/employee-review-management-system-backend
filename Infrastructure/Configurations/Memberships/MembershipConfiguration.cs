@@ -12,17 +12,9 @@ namespace Infrastructure.Configurations.Memberships
 
             builder.HasKey(m => m.Id);
 
-            // This block right here helps us define,
-            // the conversion from C# to the DB and vice versa,
             builder.Property(m => m.IsTeamLead)
-                  .HasColumnType("tinyint")
-                  .IsRequired()
-                  .HasConversion(
-                      // C# => DB
-                      isLead => (byte)(isLead ? 1 : 0),
-                      // DB => C#
-                      value => value == 1
-                  );
+                   .HasColumnType("bit")
+                   .IsRequired();
 
             // This block on the other hand defines the 1:* relationship,
             // between the user and the membership, where we define that

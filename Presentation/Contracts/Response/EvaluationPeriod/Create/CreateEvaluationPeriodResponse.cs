@@ -6,5 +6,6 @@
         public DateOnly EndDate { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
+        public IEnumerable<long> EvaluationIds { get; set; } = new List<long>();
     }
 }

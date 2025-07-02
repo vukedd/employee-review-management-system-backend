@@ -193,8 +193,21 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER"
+            ]
+          }
+        ]
       }
     },
     "/api/evaluationPeriod/delete/{id}": {
@@ -566,6 +579,13 @@
           "description": {
             "type": "string",
             "nullable": true
+          },
+          "evaluationIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
           }
         }
       },
@@ -588,6 +608,13 @@
           "description": {
             "type": "string",
             "nullable": true
+          },
+          "evaluationIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
           }
         }
       },

@@ -12,7 +12,7 @@ namespace Presentation.Mappers.EvaluationPeriod
     {
         #region create
         public static CreateEvaluationPeriodCommand ToCreateCommand(this CreateEvaluationPeriodContract contract)
-            => new CreateEvaluationPeriodCommand(contract.StartDate, contract.EndDate, contract.Name, contract.Description);
+            => new CreateEvaluationPeriodCommand(contract.StartDate, contract.EndDate, contract.Name, contract.Description, contract.EvaluationIds);
 
         public static CreateEvaluationPeriodResponse ToCreateResponse(this Domain.Models.Evaluations.EvaluationPeriod entity)
         {
@@ -22,6 +22,7 @@ namespace Presentation.Mappers.EvaluationPeriod
                 EndDate = (DateOnly)entity.EndDate,
                 Name = entity.Name,
                 Description = entity.Description,
+                EvaluationIds = entity.EvaluationPeriodEvaluations.Select(epe => epe.EvaluationId).ToList()
             };
         }
         #endregion
