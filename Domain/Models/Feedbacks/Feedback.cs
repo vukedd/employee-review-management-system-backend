@@ -18,7 +18,5 @@ namespace Domain.Models.Feedbacks
         public User? Reviewer { get; set; }
         public User? Reviewee { get; set; }
 
-        public Feedback() { }
-
     }
 }

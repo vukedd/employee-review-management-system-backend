@@ -20,12 +20,12 @@ namespace Infrastructure.Persistance
         public DbSet<ConcreteEvaluation> ConcreteEvaluations { get; set; }
         public DbSet<Evaluation> Evaluations { get; set; }
         public DbSet<EvaluationPeriod> EvaluationsPeriods { get; set; }
-        public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<Domain.Models.Feedbacks.Feedback> Feedbacks { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Response> Responses { get; set; }
         public DbSet<Domain.Models.Users.User> Users { get; set; }
         public DbSet<Domain.Models.Memberships.Team> Teams { get; set; }
-        public DbSet<Membership> Memberships { get; set; }
+        public DbSet<Domain.Models.Memberships.Membership> Memberships { get; set; }
         public DbSet<EvaluationPeriodEvaluation> EvaluationPeriodEvaluations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

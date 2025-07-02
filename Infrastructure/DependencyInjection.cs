@@ -32,6 +32,8 @@ namespace Infrastructure
             services.AddScoped<Application.Common.Repositories.IUserRepository, Persistance.User.UserRepository>();
             services.AddScoped<Application.Common.Repositories.ITeamRepository, Persistance.Team.TeamRepository>();
             services.AddScoped<Application.Common.Repositories.IConcreteEvaluationRepository, Persistance.Evaluations.ConcreteEvaluationRepository>();
+            services.AddScoped<Application.Common.Repositories.IFeedbackRepository, Persistance.Feedback.FeedbackRepository>();
+            services.AddScoped<Application.Common.Repositories.IMembershipRepository, Persistance.Membership.MembershipRepository>();
             services.AddScoped<Application.Common.Services.IPasswordHasher, Auth.PasswordHasher>();
             services.AddScoped<Application.Common.Services.IJwtService, Auth.JWTService>();
 

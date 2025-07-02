@@ -118,6 +118,53 @@
         ]
       }
     },
+    "/api/feedback/create": {
+      "post": {
+        "tags": [
+          "Feedback"
+        ],
+        "operationId": "PresentationEndpointsFeedbackCreate",
+        "requestBody": {
+          "x-name": "CreateFeedbackContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestFeedbackCreateFeedbackContract"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseFeedbackCreateFeedbackResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER",
+              "EMPLOYEE"
+            ]
+          }
+        ]
+      }
+    },
     "/api/evaluation/create": {
       "post": {
         "tags": [
@@ -452,6 +499,76 @@
           },
           "isTeamLead": {
             "type": "boolean"
+          }
+        }
+      },
+      "PresentationContractsResponseFeedbackCreateFeedbackResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/DomainEnumsFeedbackVisibility"
+          },
+          "reviewer": {
+            "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
+          },
+          "reviewee": {
+            "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
+          }
+        }
+      },
+      "DomainEnumsFeedbackVisibility": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "PRIVATE",
+          "PROTECTED",
+          "PUBLIC"
+        ],
+        "enum": [
+          0,
+          1,
+          2
+        ]
+      },
+      "PresentationContractsResponseUserUserDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          }
+        }
+      },
+      "PresentationContractsRequestFeedbackCreateFeedbackContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/DomainEnumsFeedbackVisibility"
+          },
+          "reviewerId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "revieweeId": {
+            "type": "integer",
+            "format": "int64"
           }
         }
       },

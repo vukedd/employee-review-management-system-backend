@@ -33,6 +33,19 @@ namespace Presentation.Mappers.User
         public static LoginUserCommand ToLoginCommand(this LoginUserContract contract) =>
             new LoginUserCommand(contract.Username, contract.Password);
         #endregion
+
+        #region other
+        public static UserDto ToUserDto(this Domain.Models.Users.User user)
+        {
+            return new UserDto
+            {
+                Username = user.Username,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+            };
+        }
+        #endregion
     }
 }
 
