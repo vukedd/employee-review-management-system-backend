@@ -23,6 +23,7 @@ namespace Presentation.ExceptionHandling
                     ConflictException => (409, new { error = e.Message }),
                     UnauthorizedException => (401, new {error = e.Message}),
                     UnprocessableException => (422, new {error = e.Message}),
+                    ForbiddenException => (403, new { error = e.Message}),
                     _ => (500, new { error = "An unexpected error has occurred please try again later!" }),
                 };
 

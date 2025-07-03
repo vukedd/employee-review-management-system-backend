@@ -23,5 +23,15 @@ namespace Presentation.Mappers.Response
                 Type = response.Type,
             };
         }
+
+        public static Presentation.Contracts.Request.Response.ResponseDto ToPresResponseDto(this Domain.Models.Evaluations.EvaluationComponents.Response response)
+        {
+            return new Presentation.Contracts.Request.Response.ResponseDto
+            {
+                Id = response.Id,
+                Content = response.Content,
+                Type = response.Type,
+            };
+        }
     }
 }

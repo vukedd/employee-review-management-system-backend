@@ -383,7 +383,53 @@
         }
       }
     },
-    "/api/concreteEvaluation/pending": {
+    "/api/concreteEvaluation/edit": {
+      "put": {
+        "tags": [
+          "Concreteevaluation"
+        ],
+        "operationId": "PresentationEndpointsConcreteEvaluationEditSubmittedSelfEvaluation",
+        "requestBody": {
+          "x-name": "EditSelfEvaluationContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestConcreteEvaluationEditSelfEvaluationContract"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseConcreteEvaluationEditSelfEvaluationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "EMPLOYEE"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/concreteEvaluation": {
       "get": {
         "tags": [
           "Concreteevaluation"
@@ -974,6 +1020,118 @@
           }
         }
       },
+      "PresentationContractsResponseConcreteEvaluationEditSelfEvaluationResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "responses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PresentationContractsRequestResponseResponseDto"
+            }
+          },
+          "reviewee": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
+              }
+            ]
+          },
+          "reviewer": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
+              }
+            ]
+          },
+          "submissionTimestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "PresentationContractsRequestResponseResponseDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "content": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DomainEnumsResponseResponseType"
+          }
+        }
+      },
+      "DomainEnumsResponseResponseType": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "SCALAR",
+          "TEXT"
+        ],
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "PresentationContractsRequestConcreteEvaluationEditSelfEvaluationContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "responses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationCommonDTOsResponseDto"
+            }
+          },
+          "reviewee": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
+              }
+            ]
+          },
+          "reviewer": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
+              }
+            ]
+          }
+        }
+      },
+      "ApplicationCommonDTOsResponseDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "content": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DomainEnumsResponseResponseType"
+          }
+        }
+      },
       "PresentationContractsResponseConcreteEvaluationGetPendingEvaluationsByUsernameResponse": {
         "type": "object",
         "additionalProperties": false,
@@ -1030,34 +1188,6 @@
             ]
           }
         }
-      },
-      "PresentationContractsRequestResponseResponseDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "content": {
-            "type": "string"
-          },
-          "type": {
-            "$ref": "#/components/schemas/DomainEnumsResponseResponseType"
-          }
-        }
-      },
-      "DomainEnumsResponseResponseType": {
-        "type": "integer",
-        "description": "",
-        "x-enumNames": [
-          "SCALAR",
-          "TEXT"
-        ],
-        "enum": [
-          0,
-          1
-        ]
       },
       "PresentationContractsResponseConcreteEvaluationSubmitEvaluationResponseContract": {
         "type": "object",

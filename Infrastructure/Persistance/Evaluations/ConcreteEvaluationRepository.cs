@@ -20,11 +20,13 @@ namespace Infrastructure.Persistance.Evaluations
             await _context.SaveChangesAsync();
         }
 
-        public async Task<ConcreteEvaluation?> GetPendingEvaluationById(long evalId)
+        public async Task<ConcreteEvaluation?> GetConcreteEvaluationById(long evalId)
         {
             return await _context.ConcreteEvaluations.Include("Responses")
                 .Include("Reviewee")
                 .Include("Reviewer")
+                .Include("Evaluation")
+                .Include("EvaluationPeriod")
                 .Where(ev => ev.Id == evalId)
                 .FirstOrDefaultAsync();
         }
@@ -67,11 +69,6 @@ namespace Infrastructure.Persistance.Evaluations
 
             if (evaluation != null)
             {
-                if (!evaluation.Pending)
-                {
-                    return null;
-                }
-
                 for (int i = 0; i < responses.Count; i++)
                 {
                     evaluation.Responses[i].Content = responses[i].Content;

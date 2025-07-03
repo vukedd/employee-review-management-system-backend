@@ -13,7 +13,7 @@ namespace Application.Common.Repositories
     {
         public Task CreateConcreteEvaluationRange(List<ConcreteEvaluation> concreteEvaluationList);
         public Task<IEnumerable<ConcreteEvaluation>> GetPendingEvaluationsByUsername(string username, EvaluationFilter filter);
-        public Task<ConcreteEvaluation?> GetPendingEvaluationById(long evalId);
+        public Task<ConcreteEvaluation?> GetConcreteEvaluationById(long evalId);
         public Task<ConcreteEvaluation?> EditConcreteEvaluation(long id, List<Response> responses);
     }
 }

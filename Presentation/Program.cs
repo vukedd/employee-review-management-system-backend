@@ -14,6 +14,8 @@ builder.Services
 // Exception middleware
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
+builder.Services.AddHttpContextAccessor();
+
 // Register Application and Infrastructure layers
 builder.Services.RegisterApplication()
                 .RegisterInfrastructure(builder.Configuration);

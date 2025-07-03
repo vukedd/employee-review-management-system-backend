@@ -19,7 +19,7 @@ namespace Application.Queries.ConcreteEvaluation
 
         public async Task<Domain.Models.Evaluations.ConcreteEvaluation> Handle(GetPendingEvaluationByIdQuery request, CancellationToken cancellationToken)
         {
-            var pendingEvaluation = await _concreteEvaluationRepository.GetPendingEvaluationById(request.evalId);
+            var pendingEvaluation = await _concreteEvaluationRepository.GetConcreteEvaluationById(request.evalId);
             
             if (pendingEvaluation == null)
                 throw new NotFoundException("The evaluation form you are looking for hasn't been found");

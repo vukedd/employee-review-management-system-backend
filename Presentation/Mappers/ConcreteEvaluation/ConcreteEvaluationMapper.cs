@@ -1,4 +1,5 @@
 ﻿using Application.Commands.ConcreteEvaluation;
+using Application.Mappers.Evaluations.EvaluationComponents;
 using Application.Queries.ConcreteEvaluation;
 using Domain.Models.Evaluations;
 using Presentation.Contracts.Request.ConcreteEvaluation;
@@ -55,6 +56,23 @@ namespace Presentation.Mappers.ConcreteEvaluation
             {
                 Id = evaluation.Id,
                 Responses = evaluation.Responses.Select(r => r.ToResponseDto()),
+                Reviewee = evaluation.Reviewee.ToUserDto(),
+                Reviewer = evaluation.Reviewer.ToUserDto(),
+                SubmissionTimestamp = (DateTime)evaluation.SubmissionTimestamp
+            };
+        }
+        #endregion
+
+        #region EDIT SELF
+        public static EditEvaluationCommand ToEditCommand(this EditSelfEvaluationContract contract)
+            => new EditEvaluationCommand(contract.Id, contract.Responses.Select(re => re.ToDomainEntity()).ToList());
+
+        public static EditSelfEvaluationResponse ToEditResponse(this Domain.Models.Evaluations.ConcreteEvaluation evaluation)
+        {
+            return new EditSelfEvaluationResponse
+            {
+                Id = evaluation.Id,
+                Responses = evaluation.Responses.Select(re => re.ToPresResponseDto()).ToList(),
                 Reviewee = evaluation.Reviewee.ToUserDto(),
                 Reviewer = evaluation.Reviewer.ToUserDto(),
                 SubmissionTimestamp = (DateTime)evaluation.SubmissionTimestamp

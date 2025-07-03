@@ -1,5 +1,6 @@
 ﻿using Application.Common.DTOs;
 using Presentation.Contracts.Response.User;
+using ResponseDto = Presentation.Contracts.Request.Response.ResponseDto;
 
 namespace Presentation.Contracts.Response.ConcreteEvaluation
 {
