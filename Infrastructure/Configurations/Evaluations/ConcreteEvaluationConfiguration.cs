@@ -58,6 +58,12 @@ namespace Infrastructure.Configurations.Evaluations
                    .HasForeignKey(ce => ce.RevieweeId)
                    .IsRequired(false)
                    .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(ce => ce.EvaluationPeriod)
+                    .WithMany(ep => ep.ConcreteEvaluations)
+                    .HasForeignKey(ce => ce.EvaluationPeriodId)
+                    .IsRequired(true)
+                    .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

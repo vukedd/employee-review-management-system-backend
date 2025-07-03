@@ -16,7 +16,7 @@ namespace Presentation.Endpoints.ConcreteEvaluation
 
         public override void Configure()
         {
-            Get("concreteEvaluation/pending");
+            Get("concreteEvaluation");
             Roles("EMPLOYEE");
         }
 

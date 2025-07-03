@@ -1,5 +1,7 @@
-﻿using Application.Common.Repositories;
+﻿using Application.Common.Enums;
+using Application.Common.Repositories;
 using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,29 +21,17 @@ namespace Application.Queries.ConcreteEvaluation
 
         public async Task<IEnumerable<Domain.Models.Evaluations.ConcreteEvaluation>> Handle(GetPendingEvaluationsQuery request, CancellationToken cancellationToken)
         {
-            var pendingEvaluations = await _concreteEvaluationRepository.GetPendingEvaluationsByUsername(request.Username);
+            var pendingEvaluations = await _concreteEvaluationRepository.GetPendingEvaluationsByUsername(request.Username, (EvaluationFilter)request.Filter);
             
             // If there are no pending evaluations return it immeditely to skip unnecessary operations
             if (pendingEvaluations.Count() == 0)
                 return pendingEvaluations;
+            
 
-            var validPendingEvaluations = new List<Domain.Models.Evaluations.ConcreteEvaluation>();
-            var currDate = DateOnly.FromDateTime(DateTime.Now);
-            foreach (var eval in pendingEvaluations)
-            {
-                foreach (var epe in eval.Evaluation.EvaluationPeriodEvaluations.Select(ep => ep).ToList())
-                {
-                    if (epe.EvaluationPeriod.EndDate >= currDate)
-                    {
-                        validPendingEvaluations.Add(eval);
-                    }
-                }
-            }
-
-            return validPendingEvaluations;
+            return pendingEvaluations;
 
         }
     }
 
-    public record GetPendingEvaluationsQuery(string Username) : IRequest<IEnumerable<Domain.Models.Evaluations.ConcreteEvaluation>> { }
+    public record GetPendingEvaluationsQuery(string Username, long Filter) : IRequest<IEnumerable<Domain.Models.Evaluations.ConcreteEvaluation>> { }
 }

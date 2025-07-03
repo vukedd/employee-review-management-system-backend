@@ -1,4 +1,5 @@
-﻿using Domain.Models.Evaluations;
+﻿using Application.Common.Enums;
+using Domain.Models.Evaluations;
 using Domain.Models.Evaluations.EvaluationComponents;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Application.Common.Repositories
     public interface IConcreteEvaluationRepository
     {
         public Task CreateConcreteEvaluationRange(List<ConcreteEvaluation> concreteEvaluationList);
-        public Task<IEnumerable<ConcreteEvaluation>> GetPendingEvaluationsByUsername(string username);
+        public Task<IEnumerable<ConcreteEvaluation>> GetPendingEvaluationsByUsername(string username, EvaluationFilter filter);
         public Task<ConcreteEvaluation?> GetPendingEvaluationById(long evalId);
         public Task<ConcreteEvaluation?> EditConcreteEvaluation(long id, List<Response> responses);
     }

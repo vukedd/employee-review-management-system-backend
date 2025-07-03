@@ -85,13 +85,13 @@ namespace Application.Commands.EvaluationPeriod
                 switch (eval.Type)
                 {
                     case Domain.Enums.Evaluation.EvaluationType.SELF:
-                        concreteEvaluationsCopies.AddRange(GenerateSelfEvaluations(teams, eval));
+                        concreteEvaluationsCopies.AddRange(GenerateSelfEvaluations(teams, eval, newEvaluationPeriod));
                         break;
                     case Domain.Enums.Evaluation.EvaluationType.PEER:
-                        concreteEvaluationsCopies.AddRange(GeneratePeerEvaluations(teams, eval));
+                        concreteEvaluationsCopies.AddRange(GeneratePeerEvaluations(teams, eval, newEvaluationPeriod));
                         break;
                     case Domain.Enums.Evaluation.EvaluationType.LEAD:
-                        concreteEvaluationsCopies.AddRange(GenerateLeadEvaluations(teams, eval));
+                        concreteEvaluationsCopies.AddRange(GenerateLeadEvaluations(teams, eval, newEvaluationPeriod));
                         break;
                 }
             }
@@ -100,7 +100,7 @@ namespace Application.Commands.EvaluationPeriod
             return newEvaluationPeriod;
         }
 
-        private List<Domain.Models.Evaluations.ConcreteEvaluation> GenerateSelfEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval)
+        private List<Domain.Models.Evaluations.ConcreteEvaluation> GenerateSelfEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval, Domain.Models.Evaluations.EvaluationPeriod evalPeriod)
         {
             List<Domain.Models.Evaluations.ConcreteEvaluation> resultList = new List<Domain.Models.Evaluations.ConcreteEvaluation>();
 
@@ -115,6 +115,8 @@ namespace Application.Commands.EvaluationPeriod
                         Evaluation = eval,
                         Reviewer = membership1.User,
                         Reviewee = membership1.User,
+                        EvaluationPeriod = evalPeriod
+                        
                     };
 
                     List<Response> responses = new List<Response>();
@@ -138,7 +140,7 @@ namespace Application.Commands.EvaluationPeriod
 
             return resultList;
         }
-        private List<Domain.Models.Evaluations.ConcreteEvaluation> GenerateLeadEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval)
+        private List<Domain.Models.Evaluations.ConcreteEvaluation> GenerateLeadEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval, Domain.Models.Evaluations.EvaluationPeriod evalPeriod)
         {
             List<Domain.Models.Evaluations.ConcreteEvaluation> resultList = new List<Domain.Models.Evaluations.ConcreteEvaluation>();
             foreach (var team in teams)
@@ -159,6 +161,7 @@ namespace Application.Commands.EvaluationPeriod
                                 Evaluation = eval,
                                 Reviewer = membership1.User,
                                 Reviewee = membership2.User,
+                                EvaluationPeriod = evalPeriod
                             };
 
                             List<Response> responses = new List<Response>();
@@ -183,7 +186,7 @@ namespace Application.Commands.EvaluationPeriod
 
             return resultList;
         }
-        private List<Domain.Models.Evaluations.ConcreteEvaluation> GeneratePeerEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval)
+        private List<Domain.Models.Evaluations.ConcreteEvaluation> GeneratePeerEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval, Domain.Models.Evaluations.EvaluationPeriod evalPeriod)
         {
             List<Domain.Models.Evaluations.ConcreteEvaluation> resultList = new List<Domain.Models.Evaluations.ConcreteEvaluation>();
             foreach (var team in teams)
@@ -208,6 +211,7 @@ namespace Application.Commands.EvaluationPeriod
                                 Evaluation = eval,
                                 Reviewer = membership1.User,
                                 Reviewee = membership2.User,
+                                EvaluationPeriod = evalPeriod
                             };
 
                             List<Response> responses = new List<Response>();

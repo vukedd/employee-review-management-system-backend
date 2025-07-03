@@ -13,6 +13,7 @@ namespace Domain.Models.Evaluations
         public DateOnly? EndDate { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
+        public ICollection<ConcreteEvaluation> ConcreteEvaluations { get; set; } = new List<ConcreteEvaluation>();
         public ICollection<EvaluationPeriodEvaluation> EvaluationPeriodEvaluations { get; set; } = new List<EvaluationPeriodEvaluation>();
         public EvaluationPeriod()
         {

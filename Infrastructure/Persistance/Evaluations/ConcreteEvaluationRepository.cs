@@ -1,13 +1,8 @@
-﻿using Application.Common.Repositories;
+﻿using Application.Common.Enums;
+using Application.Common.Repositories;
 using Domain.Models.Evaluations;
 using Domain.Models.Evaluations.EvaluationComponents;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Persistance.Evaluations
 {
@@ -34,10 +29,32 @@ namespace Infrastructure.Persistance.Evaluations
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<ConcreteEvaluation>> GetPendingEvaluationsByUsername(string username)
+        public async Task<IEnumerable<ConcreteEvaluation>> GetPendingEvaluationsByUsername(string username, EvaluationFilter filter)
         {
-            return await _context.ConcreteEvaluations.Where(eval => eval.Reviewer.Username == username && eval.Pending == true)
-                .Include("Evaluation.EvaluationPeriodEvaluations.EvaluationPeriod").Include("Reviewer").Include("Reviewee").ToListAsync(); 
+            var currDate = DateOnly.FromDateTime(DateTime.Now);
+            List<ConcreteEvaluation> validPendingEvaluations = new List<Domain.Models.Evaluations.ConcreteEvaluation>();
+            var evaluationQuery = _context.ConcreteEvaluations.Where(eval => eval.Reviewer.Username == username)
+                .Include(eval => eval.Evaluation)
+                .ThenInclude(eval => eval.EvaluationPeriodEvaluations)
+                .Include("Reviewer")
+                .Include("Reviewee");
+
+            switch (filter) 
+            {
+                case EvaluationFilter.PENDING:
+                    evaluationQuery = evaluationQuery.Where(eval => eval.Pending && eval.EvaluationPeriod.EndDate >= currDate);
+                    break;
+
+                case EvaluationFilter.MISSED:
+                    evaluationQuery = evaluationQuery.Where(eval => eval.Pending && eval.EvaluationPeriod.EndDate < currDate);
+                    break;
+
+                case EvaluationFilter.EVALUATED:
+                    evaluationQuery = evaluationQuery.Where(eval => !eval.Pending);
+                    break;
+            }
+
+            return await evaluationQuery.ToListAsync();
         }
 
         public async Task<ConcreteEvaluation?> EditConcreteEvaluation(long id, List<Response> responses)
@@ -47,8 +64,14 @@ namespace Infrastructure.Persistance.Evaluations
                 .Include("Reviewee")
                 .Include("Reviewer")
                 .FirstOrDefaultAsync();
+
             if (evaluation != null)
             {
+                if (!evaluation.Pending)
+                {
+                    return null;
+                }
+
                 for (int i = 0; i < responses.Count; i++)
                 {
                     evaluation.Responses[i].Content = responses[i].Content;

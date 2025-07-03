@@ -3,5 +3,6 @@
     public class GetPendingEvaluationsByUsernameContract
     {
         public string Username { get; set; } = String.Empty;
+        public long Filter { get; set; }
     }
 }
