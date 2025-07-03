@@ -22,7 +22,7 @@ namespace Domain.Models.Evaluations
         public User? Reviewer { get; set; }
         public long? RevieweeId { get; set; }
         public User? Reviewee { get; set; }
-        public ICollection<Response> Responses { get; set; }
+        public List<Response> Responses { get; set; }
 
         public ConcreteEvaluation()
         {

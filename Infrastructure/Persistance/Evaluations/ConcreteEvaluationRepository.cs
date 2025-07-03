@@ -1,5 +1,6 @@
 ﻿using Application.Common.Repositories;
 using Domain.Models.Evaluations;
+using Domain.Models.Evaluations.EvaluationComponents;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System;
@@ -37,6 +38,27 @@ namespace Infrastructure.Persistance.Evaluations
         {
             return await _context.ConcreteEvaluations.Where(eval => eval.Reviewer.Username == username && eval.Pending == true)
                 .Include("Evaluation.EvaluationPeriodEvaluations.EvaluationPeriod").Include("Reviewer").Include("Reviewee").ToListAsync(); 
+        }
+
+        public async Task<ConcreteEvaluation?> EditConcreteEvaluation(long id, List<Response> responses)
+        {
+            var evaluation = await _context.ConcreteEvaluations.Where(ce => ce.Id == id)
+                .Include("Responses")
+                .Include("Reviewee")
+                .Include("Reviewer")
+                .FirstOrDefaultAsync();
+            if (evaluation != null)
+            {
+                for (int i = 0; i < responses.Count; i++)
+                {
+                    evaluation.Responses[i].Content = responses[i].Content;
+                }
+                evaluation.SubmissionTimestamp = DateTime.Now;
+                evaluation.Pending = false;
+                await _context.SaveChangesAsync();
+            }
+
+            return evaluation;
         }
     }
 }

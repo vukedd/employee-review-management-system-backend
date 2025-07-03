@@ -1,4 +1,6 @@
-﻿using Application.Queries.ConcreteEvaluation;
+﻿using Application.Commands.ConcreteEvaluation;
+using Application.Queries.ConcreteEvaluation;
+using Domain.Models.Evaluations;
 using Presentation.Contracts.Request.ConcreteEvaluation;
 using Presentation.Contracts.Response.ConcreteEvaluation;
 using Presentation.Mappers.Response;
@@ -40,6 +42,24 @@ namespace Presentation.Mappers.ConcreteEvaluation
                 Reviewer = evaluation.Reviewer.ToUserDto()
             };
         }
-    #endregion
+        #endregion
+
+        #region SUBMIT
+
+        public static SubmitEvaluationCommand ToCommand(this SubmitEvaluationRequestContract contract)
+            => new SubmitEvaluationCommand(contract.Id, contract.Responses.Select(re => re.ToAppResponseDto()).ToList());
+
+        public static SubmitEvaluationResponseContract ToSubmitResponse(this Domain.Models.Evaluations.ConcreteEvaluation evaluation)
+        {
+            return new SubmitEvaluationResponseContract
+            {
+                Id = evaluation.Id,
+                Responses = evaluation.Responses.Select(r => r.ToResponseDto()),
+                Reviewee = evaluation.Reviewee.ToUserDto(),
+                Reviewer = evaluation.Reviewer.ToUserDto(),
+                SubmissionTimestamp = (DateTime)evaluation.SubmissionTimestamp
+            };
+        }
+        #endregion
     }
 }

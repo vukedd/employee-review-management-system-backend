@@ -79,7 +79,7 @@ namespace Application.Commands.EvaluationPeriod
 
             var teams = await _teamRepository.GetAllTeams();
 
-            var concreteEvaluationsCopies = new List<ConcreteEvaluation>();
+            var concreteEvaluationsCopies = new List<Domain.Models.Evaluations.ConcreteEvaluation>();
             foreach (var eval in evaluations)
             {
                 switch (eval.Type)
@@ -100,15 +100,15 @@ namespace Application.Commands.EvaluationPeriod
             return newEvaluationPeriod;
         }
 
-        private List<ConcreteEvaluation> GenerateSelfEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval)
+        private List<Domain.Models.Evaluations.ConcreteEvaluation> GenerateSelfEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval)
         {
-            List<ConcreteEvaluation> resultList = new List<ConcreteEvaluation>();
+            List<Domain.Models.Evaluations.ConcreteEvaluation> resultList = new List<Domain.Models.Evaluations.ConcreteEvaluation>();
 
             foreach (var team in teams)
             {
                 foreach (var membership1 in team.Memberships)
                 {
-                    ConcreteEvaluation newEvaluation = new ConcreteEvaluation
+                    Domain.Models.Evaluations.ConcreteEvaluation newEvaluation = new Domain.Models.Evaluations.ConcreteEvaluation
                     {
                         Pending = true,
                         Team = team,
@@ -138,9 +138,9 @@ namespace Application.Commands.EvaluationPeriod
 
             return resultList;
         }
-        private List<ConcreteEvaluation> GenerateLeadEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval)
+        private List<Domain.Models.Evaluations.ConcreteEvaluation> GenerateLeadEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval)
         {
-            List<ConcreteEvaluation> resultList = new List<ConcreteEvaluation>();
+            List<Domain.Models.Evaluations.ConcreteEvaluation> resultList = new List<Domain.Models.Evaluations.ConcreteEvaluation>();
             foreach (var team in teams)
             {
                 foreach (var membership1 in team.Memberships)
@@ -152,7 +152,7 @@ namespace Application.Commands.EvaluationPeriod
                             if (membership1.UserId == membership2.UserId)
                                 continue;
 
-                            ConcreteEvaluation newEvaluation = new ConcreteEvaluation
+                            Domain.Models.Evaluations.ConcreteEvaluation newEvaluation = new Domain.Models.Evaluations.ConcreteEvaluation
                             {
                                 Pending = true,
                                 Team = team,
@@ -183,9 +183,9 @@ namespace Application.Commands.EvaluationPeriod
 
             return resultList;
         }
-        private List<ConcreteEvaluation> GeneratePeerEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval)
+        private List<Domain.Models.Evaluations.ConcreteEvaluation> GeneratePeerEvaluations(IEnumerable<Domain.Models.Memberships.Team> teams, Domain.Models.Evaluations.Evaluation eval)
         {
-            List<ConcreteEvaluation> resultList = new List<ConcreteEvaluation>();
+            List<Domain.Models.Evaluations.ConcreteEvaluation> resultList = new List<Domain.Models.Evaluations.ConcreteEvaluation>();
             foreach (var team in teams)
             {
                 foreach (var membership1 in team.Memberships)
@@ -201,7 +201,7 @@ namespace Application.Commands.EvaluationPeriod
                             if (membership2.IsTeamLead)
                                 continue;
 
-                            ConcreteEvaluation newEvaluation = new ConcreteEvaluation
+                            Domain.Models.Evaluations.ConcreteEvaluation newEvaluation = new Domain.Models.Evaluations.ConcreteEvaluation
                             {
                                 Pending = true,
                                 Team = team,

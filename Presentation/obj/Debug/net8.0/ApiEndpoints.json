@@ -66,6 +66,41 @@
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/concreteEvaluation/submit",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "SubmitEvaluationRequestContract",
+        "Type": "Presentation.Contracts.Request.ConcreteEvaluation.SubmitEvaluationRequestContract",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Presentation.Contracts.Response.ConcreteEvaluation.SubmitEvaluationResponseContract",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 403
+      }
+    ],
+    "EndpointName": "PresentationEndpointsConcreteEvaluationPost"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
     "RelativePath": "api/evaluation/create",
     "HttpMethod": "POST",
     "IsController": false,

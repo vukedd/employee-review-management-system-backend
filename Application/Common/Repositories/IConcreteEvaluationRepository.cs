@@ -1,4 +1,5 @@
 ﻿using Domain.Models.Evaluations;
+using Domain.Models.Evaluations.EvaluationComponents;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace Application.Common.Repositories
         public Task CreateConcreteEvaluationRange(List<ConcreteEvaluation> concreteEvaluationList);
         public Task<IEnumerable<ConcreteEvaluation>> GetPendingEvaluationsByUsername(string username);
         public Task<ConcreteEvaluation?> GetPendingEvaluationById(long evalId);
+        public Task<ConcreteEvaluation?> EditConcreteEvaluation(long id, List<Response> responses);
     }
 }

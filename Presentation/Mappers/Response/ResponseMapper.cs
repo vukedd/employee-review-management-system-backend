@@ -1,4 +1,4 @@
-﻿using Presentation.Contracts.Request;
+﻿using Presentation.Contracts.Request.Response;
 
 namespace Presentation.Mappers.Response
 {
@@ -11,6 +11,16 @@ namespace Presentation.Mappers.Response
                 Id = response.Id,
                 Type = response.Type,
                 Content = response.Content
+            };
+        }
+
+        public static Application.Common.DTOs.ResponseDto ToAppResponseDto(this Presentation.Contracts.Request.Response.ResponseDto response)
+        {
+            return new Application.Common.DTOs.ResponseDto
+            {
+                Id = response.Id,
+                Content = response.Content,
+                Type = response.Type,
             };
         }
     }
