@@ -24,11 +24,19 @@ namespace Infrastructure.Persistance.Evaluations
             await _context.SaveChangesAsync();
         }
 
+        public async Task<ConcreteEvaluation?> GetPendingEvaluationById(long evalId)
+        {
+            return await _context.ConcreteEvaluations.Include("Responses")
+                .Include("Reviewee")
+                .Include("Reviewer")
+                .Where(ev => ev.Id == evalId)
+                .FirstOrDefaultAsync();
+        }
+
         public async Task<IEnumerable<ConcreteEvaluation>> GetPendingEvaluationsByUsername(string username)
         {
             return await _context.ConcreteEvaluations.Where(eval => eval.Reviewer.Username == username && eval.Pending == true)
                 .Include("Evaluation.EvaluationPeriodEvaluations.EvaluationPeriod").Include("Reviewer").Include("Reviewee").ToListAsync(); 
         }
-
     }
 }

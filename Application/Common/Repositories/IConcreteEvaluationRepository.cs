@@ -11,5 +11,6 @@ namespace Application.Common.Repositories
     {
         public Task CreateConcreteEvaluationRange(List<ConcreteEvaluation> concreteEvaluationList);
         public Task<IEnumerable<ConcreteEvaluation>> GetPendingEvaluationsByUsername(string username);
+        public Task<ConcreteEvaluation?> GetPendingEvaluationById(long evalId);
     }
 }

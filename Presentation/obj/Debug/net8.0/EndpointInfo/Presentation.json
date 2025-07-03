@@ -428,6 +428,50 @@
           }
         ]
       }
+    },
+    "/api/concreteEvaluation/{id}": {
+      "get": {
+        "tags": [
+          "Concreteevaluation"
+        ],
+        "operationId": "PresentationEndpointsConcreteEvaluationGetPendingEvaluationById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseConcreteEvaluationGetPendingEvaluationByIdResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "EMPLOYEE",
+              "MANAGER"
+            ]
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -899,6 +943,66 @@
       "PresentationContractsRequestConcreteEvaluationGetPendingEvaluationsByUsernameContract": {
         "type": "object",
         "additionalProperties": false
+      },
+      "PresentationContractsResponseConcreteEvaluationGetPendingEvaluationByIdResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "responses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PresentationContractsRequestResponseDto"
+            }
+          },
+          "reviewee": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
+              }
+            ]
+          },
+          "reviewer": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
+              }
+            ]
+          }
+        }
+      },
+      "PresentationContractsRequestResponseDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "content": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DomainEnumsResponseResponseType"
+          }
+        }
+      },
+      "DomainEnumsResponseResponseType": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "SCALAR",
+          "TEXT"
+        ],
+        "enum": [
+          0,
+          1
+        ]
       }
     },
     "securitySchemes": {
