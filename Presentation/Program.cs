@@ -16,6 +16,17 @@ builder.Services
 
 builder.Services.AddHttpContextAccessor();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials(); // *** THIS IS CRITICAL FOR COOKIES ***
+    });
+});
+
 // Register Application and Infrastructure layers
 builder.Services.RegisterApplication()
                 .RegisterInfrastructure(builder.Configuration);
