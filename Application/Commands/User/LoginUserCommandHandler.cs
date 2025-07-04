@@ -3,6 +3,7 @@ using Application.Common.Repositories;
 using Application.Common.Services;
 using MediatR;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +17,14 @@ namespace Application.Commands.User
         private readonly IUserRepository _userRepository;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IJwtService _jwtService;
+        private readonly IRefreshTokenRepository _refreshTokenRepository;
 
-        public LoginUserCommandHandler(IUserRepository userRepository, IPasswordHasher passwordHasher, IJwtService jwtService)
+        public LoginUserCommandHandler(IUserRepository userRepository, IPasswordHasher passwordHasher, IJwtService jwtService, IRefreshTokenRepository refreshTokenRepository)
         {
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
             _jwtService = jwtService;
+            _refreshTokenRepository = refreshTokenRepository;
         }
 
         public async Task<TokenResponse> Handle(LoginUserCommand request, CancellationToken cancellationToken)
@@ -36,12 +39,15 @@ namespace Application.Commands.User
             if (!isPasswordCorrect)
                 throw new UnauthorizedException("The entered credentials are invalid!");
 
-            var tokens = await _jwtService.GenerateTokensAsync(user.Username, user.Role.ToString());
+            
+            // Token response will store a jwt by default
+            var jwtGeneration = await _jwtService.GenerateTokensAsync(user.Username, user.Role.ToString());
+            var RefreshToken = await _refreshTokenRepository.CreateNewRefreshTokenAsync(user.Id);
 
-            return tokens;
+            return new TokenResponse(jwtGeneration.AccessToken, RefreshToken.Token);
         }
     }
 
     public record LoginUserCommand(string Username, string Password) : IRequest<TokenResponse>;
-    public record TokenResponse(string AccessToken);
+    public record TokenResponse(string AccessToken, string RefreshToken);
 }

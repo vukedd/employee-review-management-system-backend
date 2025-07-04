@@ -103,3 +103,22 @@ CREATE TABLE responses (
     CONSTRAINT FK_responses_questions_QuestionId FOREIGN KEY (QuestionId) REFERENCES questions(Id) ON DELETE CASCADE,
     CONSTRAINT FK_responses_concrete_evaluations_ConcreteEvaluationId FOREIGN KEY (ConcreteEvaluationId) REFERENCES concrete_evaluations(Id) ON DELETE CASCADE
 );
+
+CREATE TABLE dbo.RefreshTokens (
+    Id BIGINT NOT NULL IDENTITY(1,1),
+    Token NVARCHAR(256) NOT NULL,
+    ExpiryDate DATETIME2(7) NOT NULL,
+    IsRevoked BIT NOT NULL,
+    UserId BIGINT NOT NULL,
+
+    CONSTRAINT PK_RefreshTokens PRIMARY KEY CLUSTERED (Id ASC),
+    CONSTRAINT UQ_RefreshTokens_Token UNIQUE NONCLUSTERED (Token ASC),
+    CONSTRAINT FK_RefreshTokens_Users_UserId FOREIGN KEY (UserId) REFERENCES dbo.Users(Id) ON DELETE CASCADE
+);
+GO
+
+CREATE NONCLUSTERED INDEX IX_RefreshTokens_UserId ON dbo.RefreshTokens(UserId ASC);
+GO
+
+ALTER TABLE refresh_tokens
+ADD CONSTRAINT DF_RefreshTokens_IsRevoked DEFAULT 0 FOR IsRevoked;

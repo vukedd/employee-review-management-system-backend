@@ -40,10 +40,10 @@ namespace Infrastructure.Auth
                                         SecurityAlgorithms.HmacSha256Signature)
             };
 
-            var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-            var tokenString = tokenHandler.WriteToken(securityToken);
+            var accessToken = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenString = tokenHandler.WriteToken(accessToken);
 
-            return Task.FromResult(new TokenResponse(tokenString));
+            return Task.FromResult(new TokenResponse(tokenString, ""));
         }
     }
 }

@@ -9,6 +9,8 @@ using Infrastructure.Configurations.Evaluations.EvaluationComponents;
 using Infrastructure.Configurations.Feedbacks;
 using Infrastructure.Configurations.Memberships;
 using Microsoft.EntityFrameworkCore;
+using Domain.Models.Auth;
+using Infrastructure.Configurations.Auth;
 
 namespace Infrastructure.Persistance
 {
@@ -27,6 +29,7 @@ namespace Infrastructure.Persistance
         public DbSet<Domain.Models.Memberships.Team> Teams { get; set; }
         public DbSet<Domain.Models.Memberships.Membership> Memberships { get; set; }
         public DbSet<EvaluationPeriodEvaluation> EvaluationPeriodEvaluations { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,6 +43,7 @@ namespace Infrastructure.Persistance
             modelBuilder.ApplyConfiguration(new QuestionConfiguration());
             modelBuilder.ApplyConfiguration(new ResponseConfiguration());
             modelBuilder.ApplyConfiguration(new FeedbackConfiguration());
+            modelBuilder.ApplyConfiguration(new RefreshTokenConfiguration());
         }
     }
 }

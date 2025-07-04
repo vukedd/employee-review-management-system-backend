@@ -3,6 +3,7 @@ using Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Identity.Client.Extensions.Msal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,7 @@ namespace Infrastructure
             services.AddScoped<Application.Common.Repositories.IMembershipRepository, Persistance.Membership.MembershipRepository>();
             services.AddScoped<Application.Common.Services.IPasswordHasher, Auth.PasswordHasher>();
             services.AddScoped<Application.Common.Services.IJwtService, Auth.JWTService>();
+            services.AddScoped<Application.Common.Repositories.IRefreshTokenRepository, Persistance.Auth.RefreshTokenRepository>();
 
             return services;
         }
