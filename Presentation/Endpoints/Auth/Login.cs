@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using Presentation.Contracts.Request.User;
 using Presentation.Mappers.User;
 
-namespace Presentation.Endpoints.User
+namespace Presentation.Endpoints.Auth
 {
     public class Login : Endpoint<LoginUserContract, TokenResponse>
     {
@@ -17,7 +17,7 @@ namespace Presentation.Endpoints.User
 
         public override void Configure()
         {
-            Post("login");
+            Post("auth/login");
             AllowAnonymous();
         }
 

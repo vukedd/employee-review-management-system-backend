@@ -5,7 +5,7 @@ using Presentation.Contracts.Request.User;
 using Presentation.Contracts.Response.User;
 using Presentation.Mappers.User;
 
-namespace Presentation.Endpoints.User
+namespace Presentation.Endpoints.Auth
 {
     public class Register : Endpoint<RegisterUserContract, RegisterUserResponse>
     {
@@ -17,7 +17,7 @@ namespace Presentation.Endpoints.User
 
         public override void Configure()
         {
-            Post("register");
+            Post("auth/register");
             AllowAnonymous();
         }
 

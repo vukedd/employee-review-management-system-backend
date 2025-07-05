@@ -122,3 +122,9 @@ GO
 
 ALTER TABLE refresh_tokens
 ADD CONSTRAINT DF_RefreshTokens_IsRevoked DEFAULT 0 FOR IsRevoked;
+
+ALTER TABLE feedbacks
+ADD TeamId bigint
+
+ALTER TABLE feedbacks
+ADD FOREIGN KEY (TeamId) REFERENCES teams(Id);

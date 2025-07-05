@@ -33,7 +33,7 @@ namespace Infrastructure.Auth
                     new Claim(ClaimTypes.Name, username),
                     new Claim(ClaimTypes.Role, role)
                  ]),
-                Expires = DateTime.Now.AddMinutes(60),
+                Expires = DateTime.Now.AddMinutes(15),
                 Issuer = _configuration["JWT:Issuer"],
                 Audience = _configuration["JWT:Audience"],
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), 

@@ -12,5 +12,6 @@ namespace Application.Common.Repositories
         public Task<Domain.Models.Memberships.Team> CreateTeamAsync(Team team);
         public Task<Domain.Models.Memberships.Team?> GetTeamByName(string name);
         public Task<IEnumerable<Domain.Models.Memberships.Team>> GetAllTeams();
+        public Task<IEnumerable<Domain.Models.Memberships.Team>> GetTeamsByUserId(long userId);
     }
 }

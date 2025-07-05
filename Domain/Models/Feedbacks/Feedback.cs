@@ -1,4 +1,5 @@
 ﻿using Domain.Enums.Feedback;
+using Domain.Models.Memberships;
 using Domain.Models.Users;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace Domain.Models.Feedbacks
         public long RevieweeId { get; set; }
         public User? Reviewer { get; set; }
         public User? Reviewee { get; set; }
+        public long TeamId { get; set; }
+        public Team Team { get; set; }
 
     }
 }

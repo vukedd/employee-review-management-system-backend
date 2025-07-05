@@ -2,6 +2,31 @@
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "LoginUserContract",
+        "Type": "Presentation.Contracts.Request.User.LoginUserContract",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Application.Commands.User.TokenResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "PresentationEndpointsAuthLogin"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
     "RelativePath": "api/auth/logout",
     "HttpMethod": "POST",
     "IsController": false,
@@ -38,7 +63,7 @@
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
     "RelativePath": "api/auth/refresh",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
     "Parameters": [
@@ -55,19 +80,34 @@
           "application/json"
         ],
         "StatusCode": 200
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 401
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 403
       }
     ],
     "EndpointName": "PresentationEndpointsAuthRefresh"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "RegisterUserContract",
+        "Type": "Presentation.Contracts.Request.User.RegisterUserContract",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Presentation.Contracts.Response.User.RegisterUserResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "PresentationEndpointsAuthRegister"
   },
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
@@ -393,52 +433,26 @@
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
-    "RelativePath": "api/login",
-    "HttpMethod": "POST",
+    "RelativePath": "api/team/by-user/{id}",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "LoginUserContract",
-        "Type": "Presentation.Contracts.Request.User.LoginUserContract",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "Application.Commands.User.TokenResponse",
+        "Type": "System.Collections.Generic.List\u00601[[Presentation.Contracts.Response.Team.CreateTeamResponse, Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
         "StatusCode": 200
-      }
-    ],
-    "EndpointName": "PresentationEndpointsUserLogin"
-  },
-  {
-    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
-    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
-    "RelativePath": "api/register",
-    "HttpMethod": "POST",
-    "IsController": false,
-    "Order": 0,
-    "Parameters": [
+      },
       {
-        "Name": "RegisterUserContract",
-        "Type": "Presentation.Contracts.Request.User.RegisterUserContract",
-        "IsRequired": true
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Presentation.Contracts.Response.User.RegisterUserResponse",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "PresentationEndpointsUserRegister"
+    "EndpointName": "PresentationEndpointsTeamGetTeamsByUserId"
   },
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",

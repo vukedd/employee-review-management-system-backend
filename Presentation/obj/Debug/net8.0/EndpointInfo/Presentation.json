@@ -6,72 +6,6 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/api/login": {
-      "post": {
-        "tags": [
-          "Login"
-        ],
-        "operationId": "PresentationEndpointsUserLogin",
-        "requestBody": {
-          "x-name": "LoginUserContract",
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PresentationContractsRequestUserLoginUserContract"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 1
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApplicationCommandsUserTokenResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/register": {
-      "post": {
-        "tags": [
-          "Register"
-        ],
-        "operationId": "PresentationEndpointsUserRegister",
-        "requestBody": {
-          "x-name": "RegisterUserContract",
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PresentationContractsRequestUserRegisterUserContract"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 1
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PresentationContractsResponseUserRegisterUserResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/team/create": {
       "post": {
         "tags": [
@@ -114,6 +48,47 @@
             "JWTBearerAuth": [
               "MANAGER"
             ]
+          }
+        ]
+      }
+    },
+    "/api/team/by-user/{id}": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "operationId": "PresentationEndpointsTeamGetTeamsByUserId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PresentationContractsResponseTeamCreateTeamResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": []
           }
         ]
       }
@@ -574,6 +549,39 @@
         ]
       }
     },
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "PresentationEndpointsAuthLogin",
+        "requestBody": {
+          "x-name": "LoginUserContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestUserLoginUserContract"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationCommandsUserTokenResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/auth/logout": {
       "post": {
         "tags": [
@@ -622,21 +630,24 @@
       }
     },
     "/api/auth/refresh": {
-      "get": {
+      "post": {
         "tags": [
           "Auth"
         ],
         "operationId": "PresentationEndpointsAuthRefresh",
-        "parameters": [
-          {
-            "name": "token",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
+        "requestBody": {
+          "x-name": "RefreshTokenContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestAuthRefreshTokenContract"
+              }
             }
-          }
-        ],
+          },
+          "required": true,
+          "x-position": 1
+        },
         "responses": {
           "200": {
             "description": "Success",
@@ -647,90 +658,46 @@
                 }
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
           }
+        }
+      }
+    },
+    "/api/auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "PresentationEndpointsAuthRegister",
+        "requestBody": {
+          "x-name": "RegisterUserContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestUserRegisterUserContract"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
         },
-        "security": [
-          {
-            "JWTBearerAuth": [
-              "EMPLOYEE",
-              "MANAGER"
-            ]
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseUserRegisterUserResponse"
+                }
+              }
+            }
           }
-        ]
+        }
       }
     }
   },
   "components": {
     "schemas": {
-      "ApplicationCommandsUserTokenResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "accessToken": {
-            "type": "string"
-          },
-          "refreshToken": {
-            "type": "string"
-          }
-        }
-      },
-      "PresentationContractsRequestUserLoginUserContract": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "username": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string"
-          }
-        }
-      },
-      "PresentationContractsResponseUserRegisterUserResponse": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "username": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "firstName": {
-            "type": "string"
-          },
-          "lastName": {
-            "type": "string"
-          }
-        }
-      },
-      "PresentationContractsRequestUserRegisterUserContract": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "username": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "firstName": {
-            "type": "string"
-          },
-          "lastName": {
-            "type": "string"
-          }
-        }
-      },
       "PresentationContractsResponseTeamCreateTeamResponse": {
         "type": "object",
         "additionalProperties": false,
@@ -1351,6 +1318,30 @@
           }
         }
       },
+      "ApplicationCommandsUserTokenResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "accessToken": {
+            "type": "string"
+          },
+          "refreshToken": {
+            "type": "string"
+          }
+        }
+      },
+      "PresentationContractsRequestUserLoginUserContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
       "PresentationContractsResponseAuthLogoutResponse": {
         "type": "object",
         "additionalProperties": false,
@@ -1380,7 +1371,51 @@
       },
       "PresentationContractsRequestAuthRefreshTokenContract": {
         "type": "object",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "PresentationContractsResponseUserRegisterUserResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          }
+        }
+      },
+      "PresentationContractsRequestUserRegisterUserContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          }
+        }
       }
     },
     "securitySchemes": {

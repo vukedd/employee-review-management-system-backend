@@ -12,19 +12,21 @@ builder.Services
     .AddFastEndpoints();
 
 // Exception middleware
-//builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
 builder.Services.AddHttpContextAccessor();
 
+var MyAllowSpecificOrigins = "AllowAngularApp";
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngularApp", policy =>
-    {
-        policy.WithOrigins("http://localhost:4200")
+    options.AddPolicy(name: MyAllowSpecificOrigins, 
+        policy => 
+        {
+            policy.WithOrigins("http://localhost:4200")
               .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials(); // *** THIS IS CRITICAL FOR COOKIES ***
-    });
+              .AllowAnyMethod();
+        });
 });
 
 // Register Application and Infrastructure layers
@@ -38,7 +40,9 @@ builder.Services
 
 var app = builder.Build();
 
-//app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseFastEndpoints(c =>
 {

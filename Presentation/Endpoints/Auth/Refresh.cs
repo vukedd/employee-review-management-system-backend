@@ -16,8 +16,8 @@ namespace Presentation.Endpoints.Auth
 
         public override void Configure()
         {
-            Get("auth/refresh");
-            Roles("EMPLOYEE", "MANAGER");
+            Post("auth/refresh");
+            AllowAnonymous();
         }
 
         public async override Task<RefreshTokenResponse> ExecuteAsync(RefreshTokenContract req, CancellationToken ct)

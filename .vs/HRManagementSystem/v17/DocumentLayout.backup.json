@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\commands\\auth\\logoutcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\commands\\auth\\logoutcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\endpoints\\team\\getteamsbyuserid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\endpoints\\team\\getteamsbyuserid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\contracts\\response\\auth\\logoutresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\response\\auth\\logoutresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\contracts\\response\\team\\getteamsbyuseridresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\response\\team\\getteamsbyuseridresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\contracts\\request\\auth\\logoutcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\request\\auth\\logoutcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\common\\repositories\\iteamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\common\\repositories\\iteamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\endpoints\\auth\\logout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\endpoints\\auth\\logout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\infrastructure\\persistance\\team\\teamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistance\\team\\teamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\queries\\auth\\refreshtokenqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\queries\\auth\\refreshtokenqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\queries\\team\\getteamsbyuseridqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\queries\\team\\getteamsbyuseridqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\mappers\\team\\teammapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\mappers\\team\\teammapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Program.cs",
-              "RelativeDocumentMoniker": "Presentation\\Program.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Program.cs",
-              "RelativeToolTip": "Presentation\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAzAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "TeamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Team\\TeamRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistance\\Team\\TeamRepository.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Team\\TeamRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Persistance\\Team\\TeamRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:59:05.094Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RefreshTokenQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Queries\\Auth\\RefreshTokenQueryHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Queries\\Auth\\RefreshTokenQueryHandler.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Queries\\Auth\\RefreshTokenQueryHandler.cs",
-              "RelativeToolTip": "Application\\Queries\\Auth\\RefreshTokenQueryHandler.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCEAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:53:24.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LogoutCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Commands\\Auth\\LogoutCommandHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Commands\\Auth\\LogoutCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Commands\\Auth\\LogoutCommandHandler.cs",
-              "RelativeToolTip": "Application\\Commands\\Auth\\LogoutCommandHandler.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAACAAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:44:53.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LogoutResponse.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Response\\Auth\\LogoutResponse.cs",
-              "RelativeDocumentMoniker": "Presentation\\Contracts\\Response\\Auth\\LogoutResponse.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Response\\Auth\\LogoutResponse.cs",
-              "RelativeToolTip": "Presentation\\Contracts\\Response\\Auth\\LogoutResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:35:18.221Z",
+              "WhenOpened": "2025-07-05T21:27:00.666Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LogoutContract.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Request\\Auth\\LogoutContract.cs",
-              "RelativeDocumentMoniker": "Presentation\\Contracts\\Request\\Auth\\LogoutContract.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Request\\Auth\\LogoutContract.cs",
-              "RelativeToolTip": "Presentation\\Contracts\\Request\\Auth\\LogoutContract.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAfAAAAAAAAAA==",
+              "Title": "ITeamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Common\\Repositories\\ITeamRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\Repositories\\ITeamRepository.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Common\\Repositories\\ITeamRepository.cs",
+              "RelativeToolTip": "Application\\Common\\Repositories\\ITeamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:34:45.474Z",
+              "WhenOpened": "2025-07-05T21:26:15.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Logout.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Auth\\Logout.cs",
-              "RelativeDocumentMoniker": "Presentation\\Endpoints\\Auth\\Logout.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Auth\\Logout.cs",
-              "RelativeToolTip": "Presentation\\Endpoints\\Auth\\Logout.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBsAAAA6AAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "TeamMapper.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Mappers\\Team\\TeamMapper.cs",
+              "RelativeDocumentMoniker": "Presentation\\Mappers\\Team\\TeamMapper.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Mappers\\Team\\TeamMapper.cs",
+              "RelativeToolTip": "Presentation\\Mappers\\Team\\TeamMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:32:09.317Z",
+              "WhenOpened": "2025-07-05T21:25:06.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetTeamsByUserIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Queries\\Team\\GetTeamsByUserIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Queries\\Team\\GetTeamsByUserIdQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Queries\\Team\\GetTeamsByUserIdQueryHandler.cs",
+              "RelativeToolTip": "Application\\Queries\\Team\\GetTeamsByUserIdQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T21:20:13.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GetTeamsByUserIdResponse.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Response\\Team\\GetTeamsByUserIdResponse.cs",
+              "RelativeDocumentMoniker": "Presentation\\Contracts\\Response\\Team\\GetTeamsByUserIdResponse.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Response\\Team\\GetTeamsByUserIdResponse.cs",
+              "RelativeToolTip": "Presentation\\Contracts\\Response\\Team\\GetTeamsByUserIdResponse.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T21:17:15.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetTeamsByUserId.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Team\\GetTeamsByUserId.cs",
+              "RelativeDocumentMoniker": "Presentation\\Endpoints\\Team\\GetTeamsByUserId.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Team\\GetTeamsByUserId.cs*",
+              "RelativeToolTip": "Presentation\\Endpoints\\Team\\GetTeamsByUserId.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T21:16:10.697Z",
               "EditorCaption": ""
             }
           ]
