@@ -20,5 +20,11 @@ namespace Infrastructure.Persistance.Membership
         {
             return await _context.Memberships.Where(m => m.UserId == userId).ToListAsync();
         }
+
+        public async Task<IEnumerable<Domain.Models.Memberships.Membership>> GetMembershipsByUsernameAsync(string username)
+        {
+            return await _context.Memberships.Where(m => m.User.Username == username).Include("Team").ToListAsync();
+        }
+
     }
 }

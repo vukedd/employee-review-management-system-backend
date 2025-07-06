@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace Application.Queries.Team
 {
-    public class GetTeamsByUserIdQueryHandler : IRequestHandler<GetTeamsByUserIdQuery, IEnumerable<Domain.Models.Memberships.Team>>
+    public class GetTeamsByUsernameQueryHandler : IRequestHandler<GetTeamsByUsernameQuery, IEnumerable<Domain.Models.Memberships.Team>>
     {
         private ITeamRepository _teamRepository;
-        public GetTeamsByUserIdQueryHandler(ITeamRepository teamRepository)
+        public GetTeamsByUsernameQueryHandler(ITeamRepository teamRepository)
         {
             _teamRepository = teamRepository;
         }
 
-        public async Task<IEnumerable<Domain.Models.Memberships.Team>> Handle(GetTeamsByUserIdQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<Domain.Models.Memberships.Team>> Handle(GetTeamsByUsernameQuery request, CancellationToken cancellationToken)
         {
-            var teams = await _teamRepository.GetTeamsByUserId(request.userId);
+            var teams = await _teamRepository.GetTeamsByUsername(request.username);
             return teams;
         }
     }
 
-    public record GetTeamsByUserIdQuery(long userId) : IRequest<IEnumerable<Domain.Models.Memberships.Team>>;
+    public record GetTeamsByUsernameQuery(string username) : IRequest<IEnumerable<Domain.Models.Memberships.Team>>;
 }

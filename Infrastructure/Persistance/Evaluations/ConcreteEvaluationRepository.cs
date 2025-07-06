@@ -31,7 +31,7 @@ namespace Infrastructure.Persistance.Evaluations
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<ConcreteEvaluation>> GetPendingEvaluationsByUsername(string username, EvaluationFilter filter)
+        public async Task<IEnumerable<ConcreteEvaluation>> GetPendingEvaluationsByUsername(string username, EvaluationFilter filter, long TeamId)
         {
             var currDate = DateOnly.FromDateTime(DateTime.Now);
             List<ConcreteEvaluation> validPendingEvaluations = new List<Domain.Models.Evaluations.ConcreteEvaluation>();
@@ -44,15 +44,32 @@ namespace Infrastructure.Persistance.Evaluations
             switch (filter) 
             {
                 case EvaluationFilter.PENDING:
-                    evaluationQuery = evaluationQuery.Where(eval => eval.Pending && eval.EvaluationPeriod.EndDate >= currDate);
+                    if (TeamId > 0)
+                        evaluationQuery = evaluationQuery.Where(eval => eval.Pending
+                        && eval.EvaluationPeriod.EndDate >= currDate && eval.TeamId == TeamId);
+                    else
+                        evaluationQuery = evaluationQuery.Where(eval => eval.Pending
+                        && eval.EvaluationPeriod.EndDate >= currDate);
+
                     break;
 
                 case EvaluationFilter.MISSED:
-                    evaluationQuery = evaluationQuery.Where(eval => eval.Pending && eval.EvaluationPeriod.EndDate < currDate);
+                    if (TeamId > 0)
+                        evaluationQuery = evaluationQuery.Where(eval => eval.Pending
+                        && eval.EvaluationPeriod.EndDate < currDate && eval.TeamId == TeamId);
+                    else
+                        evaluationQuery = evaluationQuery.Where(eval => eval.Pending
+                        && eval.EvaluationPeriod.EndDate < currDate);
+                    
                     break;
 
                 case EvaluationFilter.EVALUATED:
-                    evaluationQuery = evaluationQuery.Where(eval => !eval.Pending);
+                    if (TeamId > 0)
+                        evaluationQuery = evaluationQuery.Where(eval => !eval.Pending 
+                        && eval.TeamId == TeamId);
+                    else
+                        evaluationQuery = evaluationQuery.Where(eval => !eval.Pending);
+                    
                     break;
             }
 

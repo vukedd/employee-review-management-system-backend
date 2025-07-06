@@ -21,17 +21,13 @@ namespace Application.Queries.ConcreteEvaluation
 
         public async Task<IEnumerable<Domain.Models.Evaluations.ConcreteEvaluation>> Handle(GetPendingEvaluationsQuery request, CancellationToken cancellationToken)
         {
-            var pendingEvaluations = await _concreteEvaluationRepository.GetPendingEvaluationsByUsername(request.Username, (EvaluationFilter)request.Filter);
-            
-            // If there are no pending evaluations return it immeditely to skip unnecessary operations
-            if (pendingEvaluations.Count() == 0)
-                return pendingEvaluations;
-            
+            var pendingEvaluations = await _concreteEvaluationRepository
+                .GetPendingEvaluationsByUsername(request.Username, (EvaluationFilter)request.Filter, request.TeamId);            
 
             return pendingEvaluations;
 
         }
     }
 
-    public record GetPendingEvaluationsQuery(string Username, long Filter) : IRequest<IEnumerable<Domain.Models.Evaluations.ConcreteEvaluation>> { }
+    public record GetPendingEvaluationsQuery(string Username, long Filter, long TeamId) : IRequest<IEnumerable<Domain.Models.Evaluations.ConcreteEvaluation>> { }
 }

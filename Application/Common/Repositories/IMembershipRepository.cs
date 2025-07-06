@@ -9,5 +9,7 @@ namespace Application.Common.Repositories
     public interface IMembershipRepository
     {
         public Task<IEnumerable<Domain.Models.Memberships.Membership>> GetMembershipsByUserIdAsync(long userId);
+        public Task<IEnumerable<Domain.Models.Memberships.Membership>> GetMembershipsByUsernameAsync(string username);
+
     }
 }

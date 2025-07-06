@@ -31,7 +31,7 @@ namespace Infrastructure.Auth
                 Subject = new ClaimsIdentity(
                 [
                     new Claim(ClaimTypes.Name, username),
-                    new Claim(ClaimTypes.Role, role)
+                    new Claim(ClaimTypes.Role, role),
                  ]),
                 Expires = DateTime.Now.AddMinutes(15),
                 Issuer = _configuration["JWT:Issuer"],

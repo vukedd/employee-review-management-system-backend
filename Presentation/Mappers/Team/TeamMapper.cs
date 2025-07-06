@@ -18,5 +18,13 @@ namespace Presentation.Mappers.Team
                 Memberships = team.Memberships.Select(m => m.ToCreateMembershipResponse()).ToList()
             };
         }
+
+        public static GetTeamByIdResponse ToGetByIdResponse(this Domain.Models.Memberships.Team team)
+        {
+            return new GetTeamByIdResponse
+            {
+                Name = team.Name
+            };
+        }
     }
 }

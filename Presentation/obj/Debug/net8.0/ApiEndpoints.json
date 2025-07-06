@@ -433,14 +433,14 @@
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
-    "RelativePath": "api/team/by-user/{id}",
+    "RelativePath": "api/membership/{username}",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Presentation.Contracts.Response.Team.CreateTeamResponse, Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Presentation.Contracts.Response.Membership.GetMembershipByUsernameResponse, Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -450,9 +450,43 @@
         "Type": "System.Void",
         "MediaTypes": [],
         "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 403
       }
     ],
-    "EndpointName": "PresentationEndpointsTeamGetTeamsByUserId"
+    "EndpointName": "PresentationEndpointsMembershipGetMembershipsByUsername"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/team/{id}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Presentation.Contracts.Response.Team.GetTeamByIdResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 403
+      }
+    ],
+    "EndpointName": "PresentationEndpointsTeamGetById"
   },
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",

@@ -1,6 +1,6 @@
 ﻿namespace Presentation.Contracts.Response.Team
 {
-    public class GetTeamsByUserIdResponse
+    public class GetTeamsByUsernameResponse
     {
         IEnumerable<CreateTeamResponse> Teams { get; set; }
     }

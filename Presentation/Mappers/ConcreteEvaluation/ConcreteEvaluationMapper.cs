@@ -13,7 +13,7 @@ namespace Presentation.Mappers.ConcreteEvaluation
     {
         #region BY USERNAME
         public static GetPendingEvaluationsQuery ToQuery(this GetPendingEvaluationsByUsernameContract contract)
-            => new GetPendingEvaluationsQuery(contract.Username, contract.Filter);
+            => new GetPendingEvaluationsQuery(contract.Username, contract.Filter, contract.TeamId);
 
         public static GetPendingEvaluationsByUsernameResponse ToResponse(this Domain.Models.Evaluations.ConcreteEvaluation eval)
         {

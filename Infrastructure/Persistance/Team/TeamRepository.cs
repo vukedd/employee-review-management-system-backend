@@ -35,9 +35,14 @@ namespace Infrastructure.Persistance.Team
             return await _context.Teams.Where(t => t.Name == name).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<Domain.Models.Memberships.Team>> GetTeamsByUserId(long userId)
+        public async Task<IEnumerable<Domain.Models.Memberships.Team>> GetTeamsByUsername(string username)
         {
-            return await _context.Teams.Where(t => t.Memberships.Any(m => m.UserId == userId)).ToListAsync();
+            return await _context.Teams.Where(t => t.Memberships.Any(m => m.User.Username == username)).ToListAsync();
+        }
+
+        public async Task<Domain.Models.Memberships.Team?> GetTeamById(long teamId)
+        {
+            return await _context.Teams.Where(t => t.Id == teamId).FirstOrDefaultAsync();
         }
     }
 }
