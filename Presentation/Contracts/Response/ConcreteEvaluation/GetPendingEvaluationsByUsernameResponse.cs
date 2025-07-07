@@ -8,5 +8,6 @@ namespace Presentation.Contracts.Response.ConcreteEvaluation
         public long Id { get; set; }
         public EvaluationType EvaluationType { get; set; }
         public UserDto? Reviewee { get; set; }
+        public DateOnly? Deadline { get; set; }
     }
 }

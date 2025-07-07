@@ -6,17 +6,17 @@ using Presentation.Mappers.ConcreteEvaluation;
 
 namespace Presentation.Endpoints.ConcreteEvaluation
 {
-    public class Post : Endpoint<SubmitEvaluationRequestContract, SubmitEvaluationResponseContract>
+    public class SubmitEvaluation : Endpoint<SubmitEvaluationRequestContract, SubmitEvaluationResponseContract>
     {
         private IMediator _mediator;
-        public Post(IMediator mediator)
+        public SubmitEvaluation(IMediator mediator)
         {
             _mediator = mediator;
         }
 
         public override void Configure()
         {
-            Post("concreteEvaluation/submit");
+            Put("concreteEvaluation/submit");
             Roles("EMPLOYEE");
         }
 

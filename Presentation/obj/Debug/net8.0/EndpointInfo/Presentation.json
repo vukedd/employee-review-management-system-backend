@@ -562,12 +562,57 @@
         ]
       }
     },
-    "/api/concreteEvaluation/submit": {
-      "post": {
+    "/api/concreteEvaluation/count/{username}": {
+      "get": {
         "tags": [
           "Concreteevaluation"
         ],
-        "operationId": "PresentationEndpointsConcreteEvaluationPost",
+        "operationId": "PresentationEndpointsConcreteEvaluationGetPendingEvaluationCountByUsername",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "EMPLOYEE",
+              "MANAGER"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/concreteEvaluation/submit": {
+      "put": {
+        "tags": [
+          "Concreteevaluation"
+        ],
+        "operationId": "PresentationEndpointsConcreteEvaluationSubmitEvaluation",
         "requestBody": {
           "x-name": "SubmitEvaluationRequestContract",
           "description": "",
@@ -1214,6 +1259,9 @@
           },
           "type": {
             "$ref": "#/components/schemas/DomainEnumsResponseResponseType"
+          },
+          "question": {
+            "type": "string"
           }
         }
       },
@@ -1295,6 +1343,11 @@
                 "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
               }
             ]
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
           }
         }
       },
@@ -1333,6 +1386,10 @@
             ]
           }
         }
+      },
+      "PresentationContractsRequestConcreteEvaluationGetPendingEvaluationCoundByUsernameRequest": {
+        "type": "object",
+        "additionalProperties": false
       },
       "PresentationContractsResponseConcreteEvaluationSubmitEvaluationResponseContract": {
         "type": "object",

@@ -176,6 +176,41 @@
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/concreteEvaluation/count/{username}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "GetPendingEvaluationCoundByUsernameRequest",
+        "Type": "Presentation.Contracts.Request.ConcreteEvaluation.GetPendingEvaluationCoundByUsernameRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 403
+      }
+    ],
+    "EndpointName": "PresentationEndpointsConcreteEvaluationGetPendingEvaluationCountByUsername"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
     "RelativePath": "api/concreteEvaluation/edit",
     "HttpMethod": "PUT",
     "IsController": false,
@@ -212,7 +247,7 @@
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
     "RelativePath": "api/concreteEvaluation/submit",
-    "HttpMethod": "POST",
+    "HttpMethod": "PUT",
     "IsController": false,
     "Order": 0,
     "Parameters": [
@@ -241,7 +276,7 @@
         "StatusCode": 403
       }
     ],
-    "EndpointName": "PresentationEndpointsConcreteEvaluationPost"
+    "EndpointName": "PresentationEndpointsConcreteEvaluationSubmitEvaluation"
   },
   {
     "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",

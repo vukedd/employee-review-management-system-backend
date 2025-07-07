@@ -6,6 +6,7 @@ using Presentation.Contracts.Request.ConcreteEvaluation;
 using Presentation.Contracts.Response.ConcreteEvaluation;
 using Presentation.Mappers.Response;
 using Presentation.Mappers.User;
+using System.Runtime.CompilerServices;
 
 namespace Presentation.Mappers.ConcreteEvaluation
 {
@@ -21,8 +22,8 @@ namespace Presentation.Mappers.ConcreteEvaluation
             {
                 Id = eval.Id,
                 EvaluationType = eval.Evaluation.Type,
-                Reviewee = eval.Reviewee.ToUserDto()
-
+                Reviewee = eval.Reviewee.ToUserDto(),
+                Deadline = eval.EvaluationPeriod.EndDate
             };
         }
         #endregion
@@ -78,6 +79,11 @@ namespace Presentation.Mappers.ConcreteEvaluation
                 SubmissionTimestamp = (DateTime)evaluation.SubmissionTimestamp
             };
         }
+        #endregion
+
+        #region COUNT
+        public static GetPendingEvaluationCountByUsernameQuery ToCountQuery(this GetPendingEvaluationCoundByUsernameRequest request)
+            => new GetPendingEvaluationCountByUsernameQuery(request.Username);
         #endregion
     }
 }

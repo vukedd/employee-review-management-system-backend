@@ -25,7 +25,7 @@ namespace Infrastructure.Persistance.Evaluations
             return await _context.ConcreteEvaluations.Include("Responses")
                 .Include("Reviewee")
                 .Include("Reviewer")
-                .Include("Evaluation")
+                .Include("Evaluation.Questions")
                 .Include("EvaluationPeriod")
                 .Where(ev => ev.Id == evalId)
                 .FirstOrDefaultAsync();
@@ -38,6 +38,7 @@ namespace Infrastructure.Persistance.Evaluations
             var evaluationQuery = _context.ConcreteEvaluations.Where(eval => eval.Reviewer.Username == username)
                 .Include(eval => eval.Evaluation)
                 .ThenInclude(eval => eval.EvaluationPeriodEvaluations)
+                .Include(eval => eval.EvaluationPeriod)
                 .Include("Reviewer")
                 .Include("Reviewee");
 
@@ -82,6 +83,7 @@ namespace Infrastructure.Persistance.Evaluations
                 .Include("Responses")
                 .Include("Reviewee")
                 .Include("Reviewer")
+                .Include("Evaluation.Questions")
                 .FirstOrDefaultAsync();
 
             if (evaluation != null)
@@ -96,6 +98,11 @@ namespace Infrastructure.Persistance.Evaluations
             }
 
             return evaluation;
+        }
+
+        public async Task<int> GetPendingEvaluationCountByUsername(string username)
+        {
+            return await _context.ConcreteEvaluations.Where(ce => ce.Reviewer.Username == username && ce.Pending == true).CountAsync();
         }
     }
 }

@@ -10,7 +10,8 @@ namespace Presentation.Mappers.Response
             {
                 Id = response.Id,
                 Type = response.Type,
-                Content = response.Content
+                Content = response.Content,
+                Question = response.Question.Content
             };
         }
 
