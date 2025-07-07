@@ -6,7 +6,7 @@ namespace Presentation.Contracts.Request.Feedback
     {
         public string Content { get; set; } = string.Empty;
         public Visibility Visibility { get; set; }
-        public long ReviewerId { get; set;}
-        public long RevieweeId { get; set;}
+        public string Reviewer { get; set;}
+        public string Reviewee { get; set;}
     }
 }

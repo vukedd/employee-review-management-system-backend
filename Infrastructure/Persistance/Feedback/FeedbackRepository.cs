@@ -1,4 +1,5 @@
 ﻿using Application.Common.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,17 @@ namespace Infrastructure.Persistance.Feedback
             await _context.SaveChangesAsync();
 
             return addedFeedback.Entity;
+        }
+
+        public async Task<IEnumerable<Domain.Models.Feedbacks.Feedback>> GetFeedbacksByUsername(string username)
+        {
+            var feedbacks = await _context.Feedbacks.Where(f => f.Reviewee.Username == username).Include("Reviewee").Include("Reviewer").ToListAsync();
+            return feedbacks;
+        }
+
+        public async Task<Domain.Models.Feedbacks.Feedback?> GetLatestFeedbackAsyncByUsername(string username)
+        {
+            return await _context.Feedbacks.Where(f => f.Reviewee.Username == username).Include("Reviewee").Include("Reviewer").FirstOrDefaultAsync();
         }
     }
 }

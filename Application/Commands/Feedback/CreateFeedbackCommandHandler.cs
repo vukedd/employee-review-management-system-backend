@@ -25,16 +25,21 @@ namespace Application.Commands.Feedback
 
         public async Task<Domain.Models.Feedbacks.Feedback> Handle(CreateFeedbackCommand request, CancellationToken cancellationToken)
         {
-            var feedbackEntity = request.ToDomainEntity();
+            var feedbackEntity = new Domain.Models.Feedbacks.Feedback();
+            feedbackEntity.Content = request.Content;
+            feedbackEntity.Visibility = request.Visibility;
 
-            var reviewer = await _userRepository.GetUserById(feedbackEntity.ReviewerId);
+            var reviewer = await _userRepository.GetUserByUsername(request.Reviewer);
             if (reviewer == null)
                 throw new NotFoundException("The reviewer you have selected hasn't been found!");
 
-            var reviewee = await _userRepository.GetUserById(feedbackEntity.RevieweeId);
+            var reviewee = await _userRepository.GetUserByUsername(request.Reviewee);
 
             if (reviewee == null)
                 throw new NotFoundException("The reviewee you have selected hasn't been found!");
+
+            if (reviewee.Id == reviewer.Id)
+                throw new ConflictException("The user can't leave a feedback to himself!");
 
             var reviewerMemberships = await _membershipRepository.GetMembershipsByUserIdAsync(reviewer.Id);
             var revieweeMemberships = await _membershipRepository.GetMembershipsByUserIdAsync(reviewee.Id);
@@ -48,11 +53,12 @@ namespace Application.Commands.Feedback
 
             feedbackEntity.Reviewee = reviewee;
             feedbackEntity.Reviewer = reviewer;
+            feedbackEntity.SubmissionTimestamp = DateTime.Now;
 
             var addedFeedback = await _feedbackRepository.CreateFeedbackAsync(feedbackEntity);
             return addedFeedback;
         }
     }
 
-    public record CreateFeedbackCommand(string Content, Visibility Visibility, long ReviewerId, long RevieweeId) : IRequest<Domain.Models.Feedbacks.Feedback> { }
+    public record CreateFeedbackCommand(string Content, Visibility Visibility, string Reviewer, string Reviewee) : IRequest<Domain.Models.Feedbacks.Feedback> { }
 }

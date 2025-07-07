@@ -9,7 +9,7 @@ namespace Presentation.Mappers.Feedback
     public static class FeedbackMapper
     {
         public static CreateFeedbackCommand ToCommand(this CreateFeedbackContract contract)
-            => new CreateFeedbackCommand(contract.Content, contract.Visibility, contract.ReviewerId, contract.RevieweeId);
+            => new CreateFeedbackCommand(contract.Content, contract.Visibility, contract.Reviewer, contract.Reviewee);
 
         public static CreateFeedbackResponse ToResponse(this Domain.Models.Feedbacks.Feedback feedback)
         {
@@ -19,6 +19,18 @@ namespace Presentation.Mappers.Feedback
                 Visibility = feedback.Visibility,
                 Reviewee = feedback.Reviewee.ToUserDto(),
                 Reviewer = feedback.Reviewer.ToUserDto(),
+                SubmissionTimestamp = feedback.SubmissionTimestamp
+            };
+        }
+
+        public static FeedbackDto ToLatestFeedbackResponse(this Domain.Models.Feedbacks.Feedback feedback)
+        {
+            return new FeedbackDto
+            {
+                Content = feedback.Content,
+                Reviewer = feedback.Reviewer.ToUserDto(),
+                Visibility = feedback.Visibility,
+                SubmissionTimestamp = feedback.SubmissionTimestamp
             };
         }
     }

@@ -18,8 +18,7 @@ namespace Domain.Models.Feedbacks
         public long RevieweeId { get; set; }
         public User? Reviewer { get; set; }
         public User? Reviewee { get; set; }
-        public long TeamId { get; set; }
-        public Team Team { get; set; }
+        public DateTime SubmissionTimestamp { get; set; }
 
     }
 }

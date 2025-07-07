@@ -9,5 +9,6 @@ namespace Presentation.Contracts.Response.Feedback
         public Visibility Visibility { get; set; }
         public UserDto Reviewer { get; set; }
         public UserDto Reviewee { get; set; }
+        public DateTime SubmissionTimestamp { get; set; }
     }
 }

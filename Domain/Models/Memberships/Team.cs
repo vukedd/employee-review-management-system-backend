@@ -12,7 +12,5 @@ namespace Domain.Models.Memberships
         public long Id { get;}
         public string Name { get; set; }
         public List<Membership> Memberships { get; set; } = new List<Membership>();
-        public List<Feedback> Feedbacks { get; set; } = new List<Feedback>();
-
     }
 }

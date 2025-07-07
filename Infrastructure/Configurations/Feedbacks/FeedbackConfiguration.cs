@@ -23,12 +23,6 @@ namespace Infrastructure.Configurations.Feedbacks
                    .IsUnicode(false)
                    .IsRequired();
 
-            builder.HasOne(f => f.Team)
-               .WithMany(t => t.Feedbacks)
-               .HasForeignKey(t => t.TeamId)
-               .IsRequired(false)
-               .OnDelete(DeleteBehavior.Restrict);
-
             builder.Property(f => f.Visibility)
                    .HasColumnType("tinyint")
                    .IsRequired()
@@ -44,6 +38,10 @@ namespace Infrastructure.Configurations.Feedbacks
                    .WithMany()
                    .HasForeignKey(f => f.RevieweeId)
                    .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Property(f => f.SubmissionTimestamp)
+                .HasColumnType("datetime")
+                .IsRequired();
         }
     }
 }
