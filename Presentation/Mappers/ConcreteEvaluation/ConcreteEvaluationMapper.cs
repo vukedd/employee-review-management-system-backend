@@ -88,5 +88,22 @@ namespace Presentation.Mappers.ConcreteEvaluation
         public static GetPendingEvaluationCountByUsernameQuery ToCountQuery(this GetPendingEvaluationCoundByUsernameRequest request)
             => new GetPendingEvaluationCountByUsernameQuery(request.Username);
         #endregion
+
+        #region Peer
+
+        public static GetPeerEvaluationByTeamResponse ToGetPeerResponse(this Domain.Models.Evaluations.ConcreteEvaluation evaluation)
+        {
+            return new GetPeerEvaluationByTeamResponse
+            {
+                Id = evaluation.Id,
+                Deadline = evaluation.EvaluationPeriod.EndDate,
+                Reviewee = evaluation.Reviewee.Username,
+                Reviewer = evaluation.Reviewer.Username,
+                Pending = evaluation.Pending,
+                Type = evaluation.Evaluation.Type
+            };
+        }
+
+        #endregion
     }
 }

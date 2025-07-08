@@ -104,5 +104,17 @@ namespace Infrastructure.Persistance.Evaluations
         {
             return await _context.ConcreteEvaluations.Where(ce => ce.Reviewer.Username == username && ce.Pending == true).CountAsync();
         }
+
+        public async Task<IEnumerable<ConcreteEvaluation>> GetPeerEvaluationsByTeamId(long teamId)
+        {
+            return await _context.ConcreteEvaluations
+                .Where(ce => ce.TeamId == teamId 
+                && ce.Evaluation.Type == Domain.Enums.Evaluation.EvaluationType.PEER)
+                .Include("Reviewee")
+                .Include("Reviewer")
+                .Include("EvaluationPeriod")
+                .Include("Evaluation")
+                .ToListAsync();
+        }
     }
 }

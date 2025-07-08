@@ -636,6 +636,53 @@
         ]
       }
     },
+    "/api/concreteEvaluation/peer/{teamId}": {
+      "get": {
+        "tags": [
+          "Concreteevaluation"
+        ],
+        "operationId": "PresentationEndpointsConcreteEvaluationGetPeerEvaluationsByTeam",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PresentationContractsResponseConcreteEvaluationGetPeerEvaluationByTeamResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER",
+              "EMPLOYEE"
+            ]
+          }
+        ]
+      }
+    },
     "/api/concreteEvaluation": {
       "get": {
         "tags": [
@@ -678,7 +725,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/PresentationContractsResponseConcreteEvaluationGetPendingEvaluationsByUsernameResponse"
+                    "$ref": "#/components/schemas/PresentationContractsResponseConcreteEvaluationGetPeerEvaluationByTeamResponse"
                   }
                 }
               }
@@ -1546,7 +1593,7 @@
           }
         }
       },
-      "PresentationContractsResponseConcreteEvaluationGetPendingEvaluationsByUsernameResponse": {
+      "PresentationContractsResponseConcreteEvaluationGetPeerEvaluationByTeamResponse": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -1554,16 +1601,17 @@
             "type": "integer",
             "format": "int64"
           },
-          "evaluationType": {
-            "$ref": "#/components/schemas/DomainEnumsEvaluationEvaluationType"
-          },
           "reviewee": {
-            "nullable": true,
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
-              }
-            ]
+            "type": "string"
+          },
+          "reviewer": {
+            "type": "string"
+          },
+          "pending": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DomainEnumsEvaluationEvaluationType"
           },
           "deadline": {
             "type": "string",

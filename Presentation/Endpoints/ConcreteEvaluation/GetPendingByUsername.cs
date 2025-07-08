@@ -6,7 +6,7 @@ using Presentation.Mappers.ConcreteEvaluation;
 
 namespace Presentation.Endpoints.ConcreteEvaluation
 {
-    public class GetPendingByUsername : Endpoint<GetPendingEvaluationsByUsernameContract, IEnumerable<GetPendingEvaluationsByUsernameResponse>>
+    public class GetPendingByUsername : Endpoint<GetPendingEvaluationsByUsernameContract, IEnumerable<GetPeerEvaluationByTeamResponse>>
     {
         public IMediator _mediator;
         public GetPendingByUsername(IMediator mediator) 
@@ -20,10 +20,10 @@ namespace Presentation.Endpoints.ConcreteEvaluation
             Roles("EMPLOYEE");
         }
 
-        public override async Task<IEnumerable<GetPendingEvaluationsByUsernameResponse>> ExecuteAsync(GetPendingEvaluationsByUsernameContract req, CancellationToken ct)
+        public override async Task<IEnumerable<GetPeerEvaluationByTeamResponse>> ExecuteAsync(GetPendingEvaluationsByUsernameContract req, CancellationToken ct)
         {
             var pendingEvaluations = await _mediator.Send(req.ToQuery());
-            return pendingEvaluations.Select(pe => pe.ToResponse()).ToList();
+            return pendingEvaluations.Select(pe => pe.ToGetPeerResponse()).ToList();
         }
     }
 }
