@@ -41,7 +41,10 @@ namespace Presentation.Mappers.ConcreteEvaluation
                 Id = evaluation.Id,
                 Responses = evaluation.Responses.Select(r => r.ToResponseDto()),
                 Reviewee = evaluation.Reviewee.ToUserDto(),
-                Reviewer = evaluation.Reviewer.ToUserDto()
+                Reviewer = evaluation.Reviewer.ToUserDto(),
+                Deadline = evaluation.EvaluationPeriod.EndDate,
+                Type = evaluation.Evaluation.Type
+
             };
         }
         #endregion

@@ -16,6 +16,11 @@ namespace Infrastructure.Persistance.Membership
             _context = context;
         }
 
+        public async Task<IEnumerable<Domain.Models.Memberships.Membership>> GetMembershipsByTeamId(long teamId)
+        {
+            return await _context.Memberships.Where(m => m.TeamId == teamId).Include("User").ToListAsync();
+        }
+
         public async Task<IEnumerable<Domain.Models.Memberships.Membership>> GetMembershipsByUserIdAsync(long userId)
         {
             return await _context.Memberships.Where(m => m.UserId == userId).ToListAsync();

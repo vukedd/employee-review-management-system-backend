@@ -96,6 +96,50 @@
         ]
       }
     },
+    "/api/team/hierarchy/{id}": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "operationId": "PresentationEndpointsTeamGetHierarchyByTeamId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseTeamTeamHierarchyResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "EMPLOYEE",
+              "MANAGER"
+            ]
+          }
+        ]
+      }
+    },
     "/api/membership/{username}": {
       "get": {
         "tags": [
@@ -1005,6 +1049,21 @@
           }
         }
       },
+      "PresentationContractsResponseTeamTeamHierarchyResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PresentationContractsResponseTeamTeamHierarchyResponse"
+            }
+          }
+        }
+      },
       "PresentationContractsResponseMembershipGetMembershipByUsernameResponse": {
         "type": "object",
         "additionalProperties": false,
@@ -1546,6 +1605,14 @@
                 "$ref": "#/components/schemas/PresentationContractsResponseUserUserDto"
               }
             ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/DomainEnumsEvaluationEvaluationType"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
           }
         }
       },

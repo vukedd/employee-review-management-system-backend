@@ -73,8 +73,6 @@ namespace Infrastructure.Persistance.Team
                     var currUser = membership.User.Username;
                     if (currUser != username)
                         users.Add(currUser);
-
-                    Trace.WriteLine(currUser);
                 }
             }
 
