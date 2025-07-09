@@ -23,14 +23,6 @@
       "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\commands\\team\\editteamcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\mappers\\team\\teammapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\mappers\\team\\teammapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\contracts\\response\\team\\createteamresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\response\\team\\createteamresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\contracts\\request\\team\\createteamcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\request\\team\\createteamcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -58,8 +50,7 @@
               "RelativeToolTip": "Presentation\\Program.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAqwCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T13:18:41.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T13:18:41.859Z"
             },
             {
               "$type": "Document",
@@ -71,8 +62,7 @@
               "RelativeToolTip": "Application\\Common\\Repositories\\ITeamRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T13:13:23.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T13:13:23.536Z"
             },
             {
               "$type": "Document",
@@ -84,8 +74,7 @@
               "RelativeToolTip": "Infrastructure\\Persistance\\Membership\\MembershipRepository.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T13:09:10.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T13:09:10.985Z"
             },
             {
               "$type": "Document",
@@ -95,7 +84,7 @@
               "RelativeDocumentMoniker": "Infrastructure\\Persistance\\Team\\TeamRepository.cs",
               "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Team\\TeamRepository.cs",
               "RelativeToolTip": "Infrastructure\\Persistance\\Team\\TeamRepository.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAmwFcAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAFcAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-09T13:03:05.591Z",
               "EditorCaption": ""
@@ -103,32 +92,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "TeamMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Mappers\\Team\\TeamMapper.cs",
-              "RelativeDocumentMoniker": "Presentation\\Mappers\\Team\\TeamMapper.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Mappers\\Team\\TeamMapper.cs",
-              "RelativeToolTip": "Presentation\\Mappers\\Team\\TeamMapper.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAADwvy0AAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T12:42:16.484Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreateTeamResponse.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Response\\Team\\CreateTeamResponse.cs",
-              "RelativeDocumentMoniker": "Presentation\\Contracts\\Response\\Team\\CreateTeamResponse.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Response\\Team\\CreateTeamResponse.cs",
-              "RelativeToolTip": "Presentation\\Contracts\\Response\\Team\\CreateTeamResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T12:39:16.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "CreateTeamContract.cs",
               "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Request\\Team\\CreateTeamContract.cs",
               "RelativeDocumentMoniker": "Presentation\\Contracts\\Request\\Team\\CreateTeamContract.cs",
@@ -136,12 +99,11 @@
               "RelativeToolTip": "Presentation\\Contracts\\Request\\Team\\CreateTeamContract.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T12:38:25.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T12:38:25.219Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "Edit.cs",
               "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Team\\Edit.cs",
               "RelativeDocumentMoniker": "Presentation\\Endpoints\\Team\\Edit.cs",
@@ -149,8 +111,7 @@
               "RelativeToolTip": "Presentation\\Endpoints\\Team\\Edit.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwBwAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T12:38:10.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T12:38:10.214Z"
             },
             {
               "$type": "Document",
@@ -162,8 +123,7 @@
               "RelativeToolTip": "Application\\Commands\\Team\\EditTeamCommandHandler.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAqwDYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T12:30:44.489Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T12:30:44.489Z"
             }
           ]
         }

@@ -13,6 +13,7 @@ namespace Presentation.Mappers.Team
         {
             return new CreateTeamResponse
             {
+                Id = team.Id,
                 Name = team.Name,
                 Memberships = team.Memberships.Select(m => m.ToCreateMembershipResponse()).ToList()
             };
