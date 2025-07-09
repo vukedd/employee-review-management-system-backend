@@ -55,6 +55,16 @@ namespace Presentation.Mappers.User
                 Name = user.Username
             };
         }
+
+        public static UserChoiceDto ToUserChoicePresDto(this Application.Common.DTOs.UserChoiceAppDto choice)
+        {
+            return new UserChoiceDto()
+            {
+               Id = choice.Id,
+               IsTeamLead = choice.IsTeamLead,
+               Name = choice.Name,
+            };
+        }
         #endregion
     }
 }

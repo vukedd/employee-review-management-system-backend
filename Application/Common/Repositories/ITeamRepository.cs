@@ -15,5 +15,6 @@ namespace Application.Common.Repositories
         public Task<IEnumerable<Domain.Models.Memberships.Team>> GetTeamsByUsername(string username);
         public Task<Domain.Models.Memberships.Team?> GetTeamById(long teamId);
         public Task<IEnumerable<string>> GetTeammatesByUsername(string username);
+        public Task<Domain.Models.Memberships.Team?> EditTeam(long id, Team team);
     }
 }

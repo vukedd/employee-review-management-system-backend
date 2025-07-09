@@ -6,10 +6,10 @@ using Presentation.Mappers.User;
 
 namespace Presentation.Endpoints.User
 {
-    public class GetAll : EndpointWithoutRequest<IEnumerable<UserChoiceDto>>
+    public class GetAllChoices : EndpointWithoutRequest<IEnumerable<UserChoiceDto>>
     {
         private readonly IMediator _mediator;
-        public GetAll(IMediator mediator)
+        public GetAllChoices(IMediator mediator)
         {
             _mediator = mediator;
         }

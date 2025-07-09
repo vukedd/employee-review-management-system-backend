@@ -11,7 +11,7 @@
         "tags": [
           "User"
         ],
-        "operationId": "PresentationEndpointsUserGetAll",
+        "operationId": "PresentationEndpointsUserGetAllChoices",
         "responses": {
           "200": {
             "description": "Success",
@@ -38,6 +38,52 @@
             "JWTBearerAuth": [
               "MANAGER",
               "EMPLOYEE"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/user/choice/{teamId}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "operationId": "PresentationEndpointsUserGetSelectedChoices",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PresentationContractsResponseUserUserChoiceDto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER"
             ]
           }
         ]
@@ -90,6 +136,60 @@
       }
     },
     "/api/team/{id}": {
+      "put": {
+        "tags": [
+          "Team"
+        ],
+        "operationId": "PresentationEndpointsTeamEdit",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "x-name": "EditTeamContract",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresentationContractsRequestTeamEditTeamContract"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresentationContractsResponseTeamEditTeamResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER"
+            ]
+          }
+        ]
+      },
       "get": {
         "tags": [
           "Team"
@@ -127,6 +227,42 @@
           {
             "JWTBearerAuth": [
               "EMPLOYEE",
+              "MANAGER"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/team": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "operationId": "PresentationEndpointsTeamGetAll",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PresentationContractsRequestTeamTeamDisplayDto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
               "MANAGER"
             ]
           }
@@ -1140,10 +1276,60 @@
           }
         }
       },
+      "PresentationContractsResponseTeamEditTeamResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "memberships": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PresentationContractsResponseMembershipCreateMembershipResponse"
+            }
+          }
+        }
+      },
+      "PresentationContractsRequestTeamEditTeamContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "memberships": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PresentationContractsRequestMembershipCreateMembershipContract"
+            }
+          }
+        }
+      },
+      "PresentationContractsRequestTeamTeamDisplayDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "leadName": {
+            "type": "string"
+          }
+        }
+      },
       "PresentationContractsResponseTeamGetTeamByIdResponse": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
           "name": {
             "type": "string"
           }

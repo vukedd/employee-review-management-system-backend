@@ -1,4 +1,5 @@
 ﻿using Application.Commands.User;
+using Application.Common.DTOs;
 using Domain.Models.Users;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,16 @@ namespace Application.Mappers.User
             );
         }
 
+        public static UserChoiceAppDto ToChoiceDto(this Domain.Models.Memberships.Membership membership)
+        {
+            return new UserChoiceAppDto
+            {
+                Id = membership.User.Id,
+                Name = membership.User.Username,
+                IsTeamLead = membership.IsTeamLead,
+
+            };
+        }
 
 
     }

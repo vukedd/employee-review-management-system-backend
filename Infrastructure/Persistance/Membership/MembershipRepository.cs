@@ -1,4 +1,5 @@
 ﻿using Application.Common.Repositories;
+using Domain.Models.Memberships;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,18 @@ namespace Infrastructure.Persistance.Membership
         public async Task<IEnumerable<Domain.Models.Memberships.Membership>> GetMembershipsByUsernameAsync(string username)
         {
             return await _context.Memberships.Where(m => m.User.Username == username).Include("Team").ToListAsync();
+        }
+
+
+        public async Task<Domain.Models.Memberships.Membership?> DeleteMembershipById(long membershipid)
+        {
+            var membership = await _context.Memberships.Where(m => m.Id == membershipid).FirstOrDefaultAsync();
+            if (membership != null)
+            {
+                _context.Remove(membership);
+                await _context.SaveChangesAsync();
+            }
+            return membership;
         }
 
     }

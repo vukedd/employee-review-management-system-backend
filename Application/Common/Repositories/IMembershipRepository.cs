@@ -11,6 +11,7 @@ namespace Application.Common.Repositories
         public Task<IEnumerable<Domain.Models.Memberships.Membership>> GetMembershipsByUserIdAsync(long userId);
         public Task<IEnumerable<Domain.Models.Memberships.Membership>> GetMembershipsByUsernameAsync(string username);
         public Task<IEnumerable<Domain.Models.Memberships.Membership>> GetMembershipsByTeamId(long teamId);
+        public Task<Domain.Models.Memberships.Membership?> DeleteMembershipById(long membershipid);
 
     }
 }

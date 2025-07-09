@@ -53,7 +53,7 @@ namespace Infrastructure.Persistance.User
 
         public async Task<IEnumerable<Domain.Models.Users.User>> GetAllUsers()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Users.Where(u => u.Role != Role.MANAGER).ToListAsync();
         }
     }
 }
