@@ -9,5 +9,6 @@ namespace Application.Common.Repositories
         public Task<Domain.Models.Users.User?> GetUserByUsername(string username);
         public Task<Role?> GetRoleByUserId(long id);
         public Task<Domain.Models.Users.User?> GetUserById(long id);
+        public Task<IEnumerable<Domain.Models.Users.User>> GetAllUsers();
     }
 }

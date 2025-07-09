@@ -45,6 +45,16 @@ namespace Presentation.Mappers.User
                 LastName = user.LastName,
             };
         }
+
+        public static UserChoiceDto ToUserChoiceDto(this Domain.Models.Users.User user)
+        {
+            return new UserChoiceDto
+            {
+                Id = user.Id,
+                IsTeamLead = false,
+                Name = user.Username
+            };
+        }
         #endregion
     }
 }

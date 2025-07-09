@@ -50,5 +50,10 @@ namespace Infrastructure.Persistance.User
         {
             return await _context.Users.Where(u => u.Id == id).FirstOrDefaultAsync();
         }
+
+        public async Task<IEnumerable<Domain.Models.Users.User>> GetAllUsers()
+        {
+            return await _context.Users.ToListAsync();
+        }
     }
 }
