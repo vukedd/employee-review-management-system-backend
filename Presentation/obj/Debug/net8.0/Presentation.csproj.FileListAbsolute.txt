@@ -341,3 +341,7 @@ C:\Users\Thinkpad\Desktop\employee-review-management-system\Presentation\obj\Deb
 C:\Users\Thinkpad\Desktop\employee-review-management-system\Presentation\obj\Debug\net8.0\Presentation.pdb
 C:\Users\Thinkpad\Desktop\employee-review-management-system\Presentation\obj\Debug\net8.0\Presentation.genruntimeconfig.cache
 C:\Users\Thinkpad\Desktop\employee-review-management-system\Presentation\obj\Debug\net8.0\ref\Presentation.dll
+C:\Users\Thinkpad\Desktop\employee-review-management-system\Presentation\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Thinkpad\Desktop\employee-review-management-system\Presentation\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Thinkpad\Desktop\employee-review-management-system\Presentation\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Thinkpad\Desktop\employee-review-management-system\Presentation\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll

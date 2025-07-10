@@ -55,5 +55,20 @@ namespace Infrastructure.Persistance.User
         {
             return await _context.Users.Where(u => u.Role != Role.MANAGER).ToListAsync();
         }
+
+        public async Task<Domain.Models.Users.User?> GetUserByVerificationToken(string token)
+        {
+            return await _context.Users.Where(u => u.VerificationToken == token).FirstOrDefaultAsync();
+        }
+
+        public async Task VerifyUser(long id)
+        {
+            var user = await _context.Users.Where(u => u.Id == id).FirstOrDefaultAsync();
+            if (user != null)
+            {
+                user.Verified = true;
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

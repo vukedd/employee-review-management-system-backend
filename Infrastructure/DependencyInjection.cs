@@ -1,4 +1,6 @@
 ﻿using Application.Common.Repositories;
+using Application.Common.Services;
+using Infrastructure.Mail;
 using Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +40,9 @@ namespace Infrastructure
             services.AddScoped<Application.Common.Services.IPasswordHasher, Auth.PasswordHasher>();
             services.AddScoped<Application.Common.Services.IJwtService, Auth.JWTService>();
             services.AddScoped<Application.Common.Repositories.IRefreshTokenRepository, Persistance.Auth.RefreshTokenRepository>();
+            services.AddScoped<Application.Common.Services.IMailService, Infrastructure.Mail.SMTPMailService>();
+            services.AddScoped<Application.Common.Services.IUtils,  Infrastructure.Auth.Utils>();
+
 
             return services;
         }

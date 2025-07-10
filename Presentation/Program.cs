@@ -12,7 +12,7 @@ builder.Services
     .AddFastEndpoints();
 
 // Exception middleware
-//builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
 builder.Services.AddHttpContextAccessor();
 
@@ -40,7 +40,7 @@ builder.Services
 
 var app = builder.Build();
 
-//app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseCors(MyAllowSpecificOrigins);
 

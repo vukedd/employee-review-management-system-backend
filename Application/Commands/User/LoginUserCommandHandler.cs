@@ -39,6 +39,9 @@ namespace Application.Commands.User
             if (!isPasswordCorrect)
                 throw new UnauthorizedException("The entered credentials are invalid!");
 
+            if (!user.Verified)
+                throw new UnauthorizedException("Account not verified, check your email!");
+
             
             // Token response will store a jwt by default
             var jwtGeneration = await _jwtService.GenerateTokensAsync(user.Username, user.Role.ToString());

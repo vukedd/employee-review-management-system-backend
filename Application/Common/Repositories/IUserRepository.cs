@@ -10,5 +10,7 @@ namespace Application.Common.Repositories
         public Task<Role?> GetRoleByUserId(long id);
         public Task<Domain.Models.Users.User?> GetUserById(long id);
         public Task<IEnumerable<Domain.Models.Users.User>> GetAllUsers();
+        public Task<Domain.Models.Users.User?> GetUserByVerificationToken(string token);
+        public Task VerifyUser(long id);
     }
 }

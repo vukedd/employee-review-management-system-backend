@@ -1409,6 +1409,29 @@
           }
         }
       }
+    },
+    "/api/auth/verify/{token}": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "PresentationEndpointsAuthVerify",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
     }
   },
   "components": {

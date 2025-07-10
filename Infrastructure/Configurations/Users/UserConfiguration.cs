@@ -39,6 +39,14 @@
                 .IsUnicode(false)
                 .IsRequired();
 
+            builder.Property(u => u.VerificationToken)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+
+            builder.Property(u => u.Verified)
+                   .HasColumnType("bit")
+                   .IsRequired();
+
             // This specifies that the role column in the database is of 
             // type tinyint which holds integer values from 0 to 255 and
             // also has a conversion type defined which means that every time

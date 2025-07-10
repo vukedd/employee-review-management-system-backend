@@ -20,6 +20,8 @@ namespace Domain.Models.Users
         public Role Role { get; set; }
         public IEnumerable<RefreshToken> RefreshTokens { get; set; }
         public IEnumerable<Membership> Memberships { get; set; } = new List<Membership>();
+        public string VerificationToken { get; set; }
+        public bool Verified { get; set; }
 
         public User(string username, string password, string email, string firstName, string lastName, Role role)
         {
@@ -29,6 +31,7 @@ namespace Domain.Models.Users
             FirstName = firstName;
             LastName = lastName;
             Role = role;
+            Verified = false;
         }
     }
 }

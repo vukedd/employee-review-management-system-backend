@@ -7,6 +7,7 @@ using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,10 +17,19 @@ namespace Application.Commands.User
     {
         private readonly IUserRepository _userRepository;
         private readonly IPasswordHasher _passwordHasher;
-        public RegisterUserCommandHandler(IUserRepository userRepository, IPasswordHasher passwordHasher)
+        private readonly IMailService _mailService;
+        private readonly IUtils _utils;
+        public RegisterUserCommandHandler(
+            IUserRepository userRepository,
+            IPasswordHasher passwordHasher, 
+            IMailService mailService,
+            IUtils utils
+        )
         {
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
+            _mailService = mailService;
+            _utils = utils;
         }
         public async Task<Domain.Models.Users.User> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
         {
@@ -36,8 +46,12 @@ namespace Application.Commands.User
             var userEntity = request.ToDomainEntity();
             userEntity.Password = await _passwordHasher.HashPasswordAsync(userEntity.Password);
 
+            var verificationToken = Guid.NewGuid().ToString();
+            userEntity.VerificationToken = verificationToken;
+
             var registeredUser = await _userRepository.CreateAsync(userEntity);
 
+            await _mailService.SendVerificationEmail(registeredUser.Email, WebUtility.UrlEncode(verificationToken));
             return registeredUser;
         }
     }
