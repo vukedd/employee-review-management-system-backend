@@ -18,6 +18,6 @@ namespace Application.Common.Repositories
         public Task<int> GetPendingEvaluationCountByUsername(string username);
         public Task<IEnumerable<ConcreteEvaluation>> GetPeerEvaluationsByTeamId(long teamId);
         public Task<long> GetEvaluationCount(long cycleId, long teamId, EvaluationStatisticsFilter filter);
-      
+        public Task<IEnumerable<ConcreteEvaluation>> GetSubmittedEvaluations(long cycleId, long teamId);
     }
 }

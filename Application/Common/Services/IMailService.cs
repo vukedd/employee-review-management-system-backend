@@ -9,5 +9,6 @@ namespace Application.Common.Services
     public interface IMailService
     {
         Task SendVerificationEmail(string to, string token);
+        Task EvaluationCycleEmail(string to, string evaluationName, DateOnly? startDate, DateOnly? endDate);
     }
 }

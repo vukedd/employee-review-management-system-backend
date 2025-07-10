@@ -14,6 +14,80 @@ namespace Infrastructure.Mail
             _settings = configuration.GetSection("SmtpSettings").Get<SmtpSettings>();
         }
 
+        public async Task EvaluationCycleEmail(string to, string evaluationName, DateOnly? startDate, DateOnly? endDate)
+        {
+            using var smtpClient = new SmtpClient(_settings.Host, _settings.Port)
+            {
+                Credentials = new NetworkCredential(_settings.Username, _settings.Password),
+                EnableSsl = true
+            };
+
+            string emailTemplate = @"
+                        <!DOCTYPE html>
+                        <html lang='en'>
+                        <head>
+                            <meta charset='UTF-8'>
+                            <title>Evaluation Cycle Started</title>
+                            <style>
+                                body {
+                                    background-color: #121212;
+                                    color: #e0e0e0;
+                                    font-family: Arial, sans-serif;
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                                .container {
+                                    max-width: 600px;
+                                    margin: 40px auto;
+                                    background-color: #1e1e1e;
+                                    padding: 30px;
+                                    border-radius: 8px;
+                                    border: 2px solid #00ff88;
+                                }
+                                h1 {
+                                    color: #00ff88;
+                                    text-align: center;
+                                }
+                                p {
+                                    color: white;
+                                    font-size: 16px;
+                                    line-height: 1.6;
+                                }
+                                .highlight {
+                                    color: #00ff88;
+                                    font-weight: bold;
+                                }
+                                .footer {
+                                    text-align: center;
+                                    margin-top: 40px;
+                                    font-size: 12px;
+                                    color: #888;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <div class='container'>
+                                <h1>New Evaluation Cycle Started</h1>
+                                <p>Hello,</p>
+                                <p>The evaluation cycle <span class='highlight'>" + evaluationName + @"</span> has officially started.</p>
+                                <p><strong>Start Date:</strong> <span class='highlight'>" + startDate?.ToString("MMMM dd, yyyy") + @"</span></p>
+                                <p><strong>End Date:</strong> <span class='highlight'>" + endDate?.ToString("MMMM dd, yyyy") + @"</span></p>
+                                <p>Please make sure to complete your evaluations within the given timeframe.</p>
+                                <div class='footer'>
+                                    &copy; 2025 RateWise. All rights reserved.
+                                </div>
+                            </div>
+                        </body>
+                        </html>";
+
+            var mail = new MailMessage(_settings.Username, to, "Verification", emailTemplate)
+            {
+                IsBodyHtml = true,
+            };
+
+            await smtpClient.SendMailAsync(mail);
+        }
+
         public async Task SendVerificationEmail(string to, string token)
         {
             using var smtpClient = new SmtpClient(_settings.Host, _settings.Port)
@@ -99,6 +173,7 @@ namespace Infrastructure.Mail
 
             await smtpClient.SendMailAsync(mail);
         }
+    
     }
 
 }

@@ -1218,6 +1218,62 @@
         ]
       }
     },
+    "/api/concreteEvaluation/submitted": {
+      "get": {
+        "tags": [
+          "Concreteevaluation"
+        ],
+        "operationId": "PresentationEndpointsConcreteEvaluationGetSubmittedEvaluations",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "cycleId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PresentationContractsResponseConcreteEvaluationGetSubmittedEvaluationDto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER"
+            ]
+          }
+        ]
+      }
+    },
     "/api/concreteEvaluation/submit": {
       "put": {
         "tags": [
@@ -1326,22 +1382,8 @@
                 }
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
           }
-        },
-        "security": [
-          {
-            "JWTBearerAuth": [
-              "EMPLOYEE",
-              "MANAGER"
-            ]
-          }
-        ]
+        }
       }
     },
     "/api/auth/refresh": {
@@ -2223,6 +2265,26 @@
         }
       },
       "PresentationContractsRequestConcreteEvaluationGetPendingEvaluationCoundByUsernameRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "PresentationContractsResponseConcreteEvaluationGetSubmittedEvaluationDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "reviewer": {
+            "type": "string"
+          },
+          "reviewee": {
+            "type": "string"
+          }
+        }
+      },
+      "PresentationContractsRequestConcreteEvaluationGetSubmittedEvaluationRequest": {
         "type": "object",
         "additionalProperties": false
       },

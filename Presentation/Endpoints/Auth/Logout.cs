@@ -17,7 +17,7 @@ namespace Presentation.Endpoints.Auth
         public override void Configure()
         {
             Post("auth/logout");
-            Roles("EMPLOYEE", "MANAGER");
+            AllowAnonymous();
         }
 
         public override async Task<LogoutResponse> ExecuteAsync(LogoutContract req, CancellationToken ct)

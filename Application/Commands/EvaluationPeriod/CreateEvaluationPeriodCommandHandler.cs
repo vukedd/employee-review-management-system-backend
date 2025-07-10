@@ -24,17 +24,23 @@ namespace Application.Commands.EvaluationPeriod
         private readonly IEvaluationRepository _evaluationRepository;
         private readonly ITeamRepository _teamRepository;
         private readonly IConcreteEvaluationRepository _concreteEvaluationRepository;
+        private readonly IMembershipRepository _membershipRepository;
+        private readonly IMailService _mailService;
 
         public CreateEvaluationPeriodCommandHandler(
             IEvaluationPeriodRepository evaluationPeriodRepository, 
             IEvaluationRepository evaluationRepository,
             ITeamRepository teamRepository,
-            IConcreteEvaluationRepository concreteEvaluationRepository)
+            IConcreteEvaluationRepository concreteEvaluationRepository,
+            IMembershipRepository membershipRepository,
+            IMailService mailService)
         {
             _concreteEvaluationRepository = concreteEvaluationRepository;
             _evaluationPeriodRepository = evaluationPeriodRepository;
             _evaluationRepository = evaluationRepository;
             _teamRepository = teamRepository;
+            _membershipRepository = membershipRepository;
+            _mailService = mailService;
         }
 
         public async Task<Domain.Models.Evaluations.EvaluationPeriod> Handle(CreateEvaluationPeriodCommand request, CancellationToken cancellationToken)
@@ -97,6 +103,31 @@ namespace Application.Commands.EvaluationPeriod
             }
 
             await _concreteEvaluationRepository.CreateConcreteEvaluationRange(concreteEvaluationsCopies);
+
+            #region fetch users and send emails that a new cycle has begun
+            HashSet<Domain.Models.Users.User> mailingList = new HashSet<Domain.Models.Users.User>();
+
+            var memberships = await _membershipRepository.GetAllMemberships();
+            foreach (var membership in memberships)
+            {
+                if (!mailingList.Contains(membership.User))
+                {
+                    mailingList.Add(membership.User);
+                }
+            }
+
+            foreach (var user in mailingList) 
+            {
+                try
+                {
+                    await _mailService.EvaluationCycleEmail(user.Email, newEvaluationPeriod.Name, newEvaluationPeriod.StartDate, newEvaluationPeriod.EndDate);
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            #endregion
             return newEvaluationPeriod;
         }
 

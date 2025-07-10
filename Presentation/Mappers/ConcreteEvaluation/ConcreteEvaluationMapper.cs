@@ -105,5 +105,15 @@ namespace Presentation.Mappers.ConcreteEvaluation
         }
 
         #endregion
+
+        public static GetSubmittedEvaluationDto ToSubmittedDto(this Domain.Models.Evaluations.ConcreteEvaluation evaluation)
+        {
+            return new GetSubmittedEvaluationDto
+            {
+                Id = evaluation.Id,
+                Reviewer = evaluation.Reviewer.Username,
+                Reviewee = evaluation.Reviewee.Username
+            };
+        }
     }
 }

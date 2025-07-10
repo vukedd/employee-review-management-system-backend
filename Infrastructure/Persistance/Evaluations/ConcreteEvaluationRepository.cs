@@ -149,5 +149,24 @@ namespace Infrastructure.Persistance.Evaluations
             var result = await query.ToListAsync();
             return result.Count();
         }
+
+        public async Task<IEnumerable<ConcreteEvaluation>> GetSubmittedEvaluations(long cycleId, long teamId)
+        {
+            IQueryable<ConcreteEvaluation> query = _context.ConcreteEvaluations.Include("Reviewer").Include("Reviewee").Where(ce => ce.Pending == false);
+
+            if (cycleId != 0)
+            {
+                query = query.Where(ce => ce.EvaluationPeriodId == cycleId);
+            }
+
+            if (teamId != 0)
+            {
+                query = query.Where(ce => ce.TeamId == teamId);
+            }
+
+
+
+            return await query.ToListAsync();
+        }
     }
 }

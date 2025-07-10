@@ -48,5 +48,10 @@ namespace Infrastructure.Persistance.Membership
         {
             return await _context.Memberships.Include("User").Where(m => m.TeamId == teamId).ToListAsync();
         }
+
+        public async Task<IEnumerable<Domain.Models.Memberships.Membership>> GetAllMemberships()
+        {
+            return await _context.Memberships.Include("User").ToListAsync();
+        }
     }
 }

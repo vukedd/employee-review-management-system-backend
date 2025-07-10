@@ -13,6 +13,7 @@ namespace Application.Common.Repositories
         public Task<IEnumerable<Domain.Models.Memberships.Membership>> GetMembershipsByTeamId(long teamId);
         public Task<Domain.Models.Memberships.Membership?> DeleteMembershipById(long membershipid);
         public Task<IEnumerable<Domain.Models.Memberships.Membership>> GetTeammatesByTeamId(long teamId);
+        public Task<IEnumerable<Domain.Models.Memberships.Membership>> GetAllMemberships();
 
     }
 }
