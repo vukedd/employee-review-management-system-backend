@@ -11,6 +11,7 @@ namespace Domain.Models.Evaluations
     public class Evaluation
     {
         public long Id { get; set; }
+        public string Name { get; set; }
         public EvaluationType Type { get; set; }
         public IEnumerable<Question> Questions { get; set; }
         public IEnumerable<ConcreteEvaluation> ConcreteEvaluations { get; set; }

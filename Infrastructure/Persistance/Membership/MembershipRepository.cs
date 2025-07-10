@@ -44,5 +44,9 @@ namespace Infrastructure.Persistance.Membership
             return membership;
         }
 
+        public async Task<IEnumerable<Domain.Models.Memberships.Membership>> GetTeammatesByTeamId(long teamId)
+        {
+            return await _context.Memberships.Include("User").Where(m => m.TeamId == teamId).ToListAsync();
+        }
     }
 }

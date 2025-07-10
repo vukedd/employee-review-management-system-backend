@@ -1,7 +1,9 @@
 ﻿using Application.Common.DTOs;
 using Presentation.Contracts.Request.Membership;
+using Presentation.Contracts.Request.Team;
 using Presentation.Contracts.Response.Membership;
 using Presentation.Contracts.Response.Team;
+using Presentation.Contracts.Response.User;
 using Presentation.Endpoints.Evaluation;
 using Presentation.Endpoints.Membership;
 using System.Linq.Expressions;
@@ -55,6 +57,15 @@ namespace Presentation.Mappers.Membership
             }
 
             return teamHieararchyResponse;
+        }
+
+        public static TeammateDto ToTeammateDto(this Domain.Models.Memberships.Membership membership)
+        {
+            return new TeammateDto
+            {
+                IsTeamLead = membership.IsTeamLead,
+                Username = membership.User.Username
+            };
         }
     }
 }

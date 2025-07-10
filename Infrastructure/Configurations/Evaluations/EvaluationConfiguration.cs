@@ -23,6 +23,10 @@ namespace Infrastructure.Configurations.Evaluations
                 .HasColumnType("tinyint")
                 .IsRequired()
                 .HasConversion<byte>();
+
+            builder.Property(e => e.Name)
+                .HasMaxLength(30)
+                .IsUnicode(false);
         }
     }
 }

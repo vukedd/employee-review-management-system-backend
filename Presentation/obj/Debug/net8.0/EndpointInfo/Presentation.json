@@ -360,6 +360,53 @@
         ]
       }
     },
+    "/api/membership/teammates/{teamId}": {
+      "get": {
+        "tags": [
+          "Membership"
+        ],
+        "operationId": "PresentationEndpointsMembershipGetTeammatesByTeamId",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PresentationContractsResponseUserTeammateDto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "EMPLOYEE",
+              "MANAGER"
+            ]
+          }
+        ]
+      }
+    },
     "/api/membership/collegues/{username}": {
       "get": {
         "tags": [
@@ -571,6 +618,42 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PresentationContractsResponseEvaluationCreateEvaluationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/evaluation/choice": {
+      "get": {
+        "tags": [
+          "Evaluation"
+        ],
+        "operationId": "PresentationEndpointsEvaluationGetEvaluationChoices",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PresentationContractsResponseEvaluationEvaluationChoiceDto"
+                  }
                 }
               }
             }
@@ -1370,6 +1453,18 @@
           }
         }
       },
+      "PresentationContractsResponseUserTeammateDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "isTeamLead": {
+            "type": "boolean"
+          }
+        }
+      },
       "PresentationContractsResponseFeedbackCreateFeedbackResponse": {
         "type": "object",
         "additionalProperties": false,
@@ -1468,6 +1563,9 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "name": {
+            "type": "string"
+          },
           "type": {
             "$ref": "#/components/schemas/DomainEnumsEvaluationEvaluationType"
           },
@@ -1542,6 +1640,9 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "name": {
+            "type": "string"
+          },
           "type": {
             "$ref": "#/components/schemas/DomainEnumsEvaluationEvaluationType"
           },
@@ -1566,6 +1667,19 @@
           },
           "category": {
             "$ref": "#/components/schemas/DomainEnumsQuestionQuestionCategory"
+          }
+        }
+      },
+      "PresentationContractsResponseEvaluationEvaluationChoiceDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
           }
         }
       },

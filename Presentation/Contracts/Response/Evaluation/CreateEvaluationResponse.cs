@@ -6,6 +6,7 @@ namespace Presentation.Contracts.Response.Evaluation
 {
     public class CreateEvaluationResponse
     {
+        public string Name { get; set; }
         public EvaluationType Type { get; set; }
         public IEnumerable<CreateQuestionResponse> Questions { get; set; } = new List<CreateQuestionResponse>();
     }

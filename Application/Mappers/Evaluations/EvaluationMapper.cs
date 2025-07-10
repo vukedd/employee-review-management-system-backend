@@ -15,6 +15,7 @@ namespace Application.Mappers.Evaluations
         {
             return new Evaluation
             {
+                Name = command.name,
                 Type = command.type,
                 Questions = command.questions.Select(q => q.ToDomainEntity()).ToList(),
             };

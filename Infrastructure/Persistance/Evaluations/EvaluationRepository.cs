@@ -35,5 +35,9 @@ namespace Infrastructure.Persistance.Evaluations
         {
             return await _context.Evaluations.Where(e => e.Id == id).Include("Questions").FirstOrDefaultAsync();
         }
+        public async Task<IEnumerable<Evaluation>> GetEvaluationChoices()
+        {
+            return await _context.Evaluations.ToListAsync();
+        }
     }
 }

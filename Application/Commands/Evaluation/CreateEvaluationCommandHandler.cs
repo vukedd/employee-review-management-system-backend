@@ -27,5 +27,5 @@ namespace Application.Commands.Evaluation
         }
     }
 
-    public record CreateEvaluationCommand(EvaluationType type, IEnumerable<QuestionDto> questions) : IRequest<Domain.Models.Evaluations.Evaluation>;
+    public record CreateEvaluationCommand(string name, EvaluationType type, IEnumerable<QuestionDto> questions) : IRequest<Domain.Models.Evaluations.Evaluation>;
 }

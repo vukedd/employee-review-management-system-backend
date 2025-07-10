@@ -23,6 +23,7 @@ CREATE TABLE teams (
 
 CREATE TABLE evaluations (
     Id bigint IDENTITY(1,1) NOT NULL,
+	Name varchar(30) UNIQUE,
     Type tinyint NOT NULL,
     CONSTRAINT PK_evaluations PRIMARY KEY (Id)
 );
