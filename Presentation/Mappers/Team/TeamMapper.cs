@@ -46,5 +46,14 @@ namespace Presentation.Mappers.Team
                 Memberships = team.Memberships.Select(m => m.ToCreateMembershipResponse()).ToList()
             };
         }
+
+        public static TeamChoiceDto ToTeamChoice(this Domain.Models.Memberships.Team team)
+        {
+            return new TeamChoiceDto
+            {
+                Id = team.Id,
+                Name = team.Name
+            };
+        }
     }
 }

@@ -313,6 +313,95 @@
         ]
       }
     },
+    "/api/team/choice": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "operationId": "PresentationEndpointsTeamGetTeamChoice",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PresentationContractsResponseTeamTeamChoiceDto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/evaluationPeriod/statistics": {
+      "get": {
+        "tags": [
+          "Evaluationperiod"
+        ],
+        "operationId": "PresentationEndpointsStatisticsGetEvaluationStatistics",
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "cycleId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApplicationCommonDTOsStatisticsDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER"
+            ]
+          }
+        ]
+      }
+    },
     "/api/membership/{username}": {
       "get": {
         "tags": [
@@ -844,6 +933,43 @@
             }
           }
         }
+      }
+    },
+    "/api/evaluationPeriod/choice": {
+      "get": {
+        "tags": [
+          "Evaluationperiod"
+        ],
+        "operationId": "PresentationEndpointsEvaluationPeriodGetEvaluationPeriodChoice",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PresentationContractsResponseEvaluationPeriodGetGetEvaluationPeriodChoiceResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "JWTBearerAuth": [
+              "MANAGER",
+              "EMPLOYEE"
+            ]
+          }
+        ]
       }
     },
     "/api/concreteEvaluation/edit": {
@@ -1437,6 +1563,45 @@
           }
         }
       },
+      "PresentationContractsResponseTeamTeamChoiceDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "ApplicationCommonDTOsStatisticsDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "missedEvaluations": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "submittedEvaluations": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pendingEvaluations": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "totalEvaluations": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "PresentationContractsRequestStatisticsStatisticsRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
       "PresentationContractsResponseMembershipGetMembershipByUsernameResponse": {
         "type": "object",
         "additionalProperties": false,
@@ -1832,6 +1997,19 @@
           "description": {
             "type": "string",
             "nullable": true
+          }
+        }
+      },
+      "PresentationContractsResponseEvaluationPeriodGetGetEvaluationPeriodChoiceResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
           }
         }
       },

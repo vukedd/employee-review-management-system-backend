@@ -74,5 +74,13 @@ namespace Presentation.Mappers.EvaluationPeriod
 
         #endregion
 
+        public static GetEvaluationPeriodChoiceResponse ToGetEvaluationPeriodChoice(this Domain.Models.Evaluations.EvaluationPeriod evaluationPeriod)
+        {
+            return new GetEvaluationPeriodChoiceResponse
+            {
+                Id = evaluationPeriod.Id,
+                Name = evaluationPeriod.Name
+            };
+        }
     }
 }

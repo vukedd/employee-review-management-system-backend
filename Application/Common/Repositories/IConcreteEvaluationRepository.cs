@@ -17,5 +17,7 @@ namespace Application.Common.Repositories
         public Task<ConcreteEvaluation?> EditConcreteEvaluation(long id, List<Response> responses);
         public Task<int> GetPendingEvaluationCountByUsername(string username);
         public Task<IEnumerable<ConcreteEvaluation>> GetPeerEvaluationsByTeamId(long teamId);
+        public Task<long> GetEvaluationCount(long cycleId, long teamId, EvaluationStatisticsFilter filter);
+      
     }
 }

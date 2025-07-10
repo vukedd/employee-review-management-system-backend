@@ -3,48 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\commands\\evaluationperiod\\createevaluationperiodcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\commands\\evaluationperiod\\createevaluationperiodcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\endpoints\\evaluationperiod\\getevaluationperiodchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\endpoints\\evaluationperiod\\getevaluationperiodchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\infrastructure\\persistance\\evaluations\\evaluationperiodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistance\\evaluations\\evaluationperiodrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\endpoints\\team\\getteamchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\endpoints\\team\\getteamchoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\endpoints\\team\\getall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\endpoints\\team\\getall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\mappers\\evaluationperiod\\evaluationperiodmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\mappers\\evaluationperiod\\evaluationperiodmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\mappers\\team\\teammapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\mappers\\team\\teammapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\endpoints\\evaluationperiod\\getall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\endpoints\\evaluationperiod\\getall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\queries\\concreteevaluation\\getevaluationstatisticsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\queries\\concreteevaluation\\getevaluationstatisticsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\endpoints\\statistics\\getevaluationstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\endpoints\\statistics\\getevaluationstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\contracts\\request\\statistics\\statisticsrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\request\\statistics\\statisticsrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\common\\enums\\evaluationstatisticsfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\common\\enums\\evaluationstatisticsfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\infrastructure\\persistance\\evaluations\\concreteevaluationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistance\\evaluations\\concreteevaluationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\commands\\concreteevaluation\\editevaluationcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\commands\\concreteevaluation\\editevaluationcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\common\\repositories\\iconcreteevaluationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\common\\repositories\\iconcreteevaluationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\commands\\concreteevaluation\\submitevaluationcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\commands\\concreteevaluation\\submitevaluationcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\endpoints\\membership\\getteammatesbyteamid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\endpoints\\membership\\getteammatesbyteamid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\mappers\\membership\\membershipmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\mappers\\membership\\membershipmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\presentation\\contracts\\response\\user\\teammatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4744D115-4BF1-49C8-9454-DDCBF7A78D2D}|Presentation\\Presentation.csproj|solutionrelative:presentation\\contracts\\response\\user\\teammatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\infrastructure\\persistance\\membership\\membershiprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistance\\membership\\membershiprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\queries\\team\\getteammatesbyteamidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\queries\\team\\getteammatesbyteamidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\infrastructure\\persistance\\team\\teamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E0FE237-BE2C-4979-9BEB-645186DBAA7F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\persistance\\team\\teamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|c:\\users\\thinkpad\\desktop\\employee-review-management-system\\application\\common\\dtos\\statisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{342BA06D-AAA8-4588-8073-FEB80F509BF2}|Application\\Application.csproj|solutionrelative:application\\common\\dtos\\statisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,144 +71,170 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CreateEvaluationPeriodCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Commands\\EvaluationPeriod\\CreateEvaluationPeriodCommandHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Commands\\EvaluationPeriod\\CreateEvaluationPeriodCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Commands\\EvaluationPeriod\\CreateEvaluationPeriodCommandHandler.cs",
-              "RelativeToolTip": "Application\\Commands\\EvaluationPeriod\\CreateEvaluationPeriodCommandHandler.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAwwI4AAAADAAAAAAAAAA==",
+              "Title": "GetEvaluationPeriodChoice.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\EvaluationPeriod\\GetEvaluationPeriodChoice.cs",
+              "RelativeDocumentMoniker": "Presentation\\Endpoints\\EvaluationPeriod\\GetEvaluationPeriodChoice.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\EvaluationPeriod\\GetEvaluationPeriodChoice.cs",
+              "RelativeToolTip": "Presentation\\Endpoints\\EvaluationPeriod\\GetEvaluationPeriodChoice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:52:56.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EvaluationPeriodRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Evaluations\\EvaluationPeriodRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistance\\Evaluations\\EvaluationPeriodRepository.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Evaluations\\EvaluationPeriodRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Persistance\\Evaluations\\EvaluationPeriodRepository.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:52:49.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ConcreteEvaluationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Evaluations\\ConcreteEvaluationRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistance\\Evaluations\\ConcreteEvaluationRepository.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Evaluations\\ConcreteEvaluationRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Persistance\\Evaluations\\ConcreteEvaluationRepository.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:52:04.887Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EditEvaluationCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Commands\\ConcreteEvaluation\\EditEvaluationCommandHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Commands\\ConcreteEvaluation\\EditEvaluationCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Commands\\ConcreteEvaluation\\EditEvaluationCommandHandler.cs",
-              "RelativeToolTip": "Application\\Commands\\ConcreteEvaluation\\EditEvaluationCommandHandler.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:51:50.689Z",
+              "WhenOpened": "2025-07-10T11:01:18.703Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SubmitEvaluationCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Commands\\ConcreteEvaluation\\SubmitEvaluationCommandHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Commands\\ConcreteEvaluation\\SubmitEvaluationCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Commands\\ConcreteEvaluation\\SubmitEvaluationCommandHandler.cs",
-              "RelativeToolTip": "Application\\Commands\\ConcreteEvaluation\\SubmitEvaluationCommandHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "TeamMapper.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Mappers\\Team\\TeamMapper.cs",
+              "RelativeDocumentMoniker": "Presentation\\Mappers\\Team\\TeamMapper.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Mappers\\Team\\TeamMapper.cs",
+              "RelativeToolTip": "Presentation\\Mappers\\Team\\TeamMapper.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowDcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:51:48.093Z",
+              "WhenOpened": "2025-07-10T10:59:35.765Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TeammateDto.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Response\\User\\TeammateDto.cs",
-              "RelativeDocumentMoniker": "Presentation\\Contracts\\Response\\User\\TeammateDto.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Response\\User\\TeammateDto.cs",
-              "RelativeToolTip": "Presentation\\Contracts\\Response\\User\\TeammateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "EvaluationPeriodMapper.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Mappers\\EvaluationPeriod\\EvaluationPeriodMapper.cs",
+              "RelativeDocumentMoniker": "Presentation\\Mappers\\EvaluationPeriod\\EvaluationPeriodMapper.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Mappers\\EvaluationPeriod\\EvaluationPeriodMapper.cs",
+              "RelativeToolTip": "Presentation\\Mappers\\EvaluationPeriod\\EvaluationPeriodMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:44:31.131Z",
+              "WhenOpened": "2025-07-10T10:54:04.261Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MembershipMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Mappers\\Membership\\MembershipMapper.cs",
-              "RelativeDocumentMoniker": "Presentation\\Mappers\\Membership\\MembershipMapper.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Mappers\\Membership\\MembershipMapper.cs",
-              "RelativeToolTip": "Presentation\\Mappers\\Membership\\MembershipMapper.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAwwEMAAAAOAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GetTeamChoice.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Team\\GetTeamChoice.cs",
+              "RelativeDocumentMoniker": "Presentation\\Endpoints\\Team\\GetTeamChoice.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Team\\GetTeamChoice.cs",
+              "RelativeToolTip": "Presentation\\Endpoints\\Team\\GetTeamChoice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:41:35.012Z",
+              "WhenOpened": "2025-07-10T10:42:51.304Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MembershipRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Membership\\MembershipRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistance\\Membership\\MembershipRepository.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Membership\\MembershipRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Persistance\\Membership\\MembershipRepository.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowC0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "GetAll.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Team\\GetAll.cs",
+              "RelativeDocumentMoniker": "Presentation\\Endpoints\\Team\\GetAll.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Team\\GetAll.cs",
+              "RelativeToolTip": "Presentation\\Endpoints\\Team\\GetAll.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:37:10.189Z",
+              "WhenOpened": "2025-07-10T10:42:17.827Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "GetTeammatesByTeamId.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Membership\\GetTeammatesByTeamId.cs",
-              "RelativeDocumentMoniker": "Presentation\\Endpoints\\Membership\\GetTeammatesByTeamId.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Membership\\GetTeammatesByTeamId.cs",
-              "RelativeToolTip": "Presentation\\Endpoints\\Membership\\GetTeammatesByTeamId.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABFAAAAAAAAAA==",
+              "Title": "GetAll.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\EvaluationPeriod\\GetAll.cs",
+              "RelativeDocumentMoniker": "Presentation\\Endpoints\\EvaluationPeriod\\GetAll.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\EvaluationPeriod\\GetAll.cs",
+              "RelativeToolTip": "Presentation\\Endpoints\\EvaluationPeriod\\GetAll.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:21:08.424Z",
+              "WhenOpened": "2025-07-10T10:40:52.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetEvaluationStatistics.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Statistics\\GetEvaluationStatistics.cs",
+              "RelativeDocumentMoniker": "Presentation\\Endpoints\\Statistics\\GetEvaluationStatistics.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Endpoints\\Statistics\\GetEvaluationStatistics.cs",
+              "RelativeToolTip": "Presentation\\Endpoints\\Statistics\\GetEvaluationStatistics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T09:38:48.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetEvaluationStatisticsQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Queries\\ConcreteEvaluation\\GetEvaluationStatisticsQueryHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Queries\\ConcreteEvaluation\\GetEvaluationStatisticsQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Queries\\ConcreteEvaluation\\GetEvaluationStatisticsQueryHandler.cs",
+              "RelativeToolTip": "Application\\Queries\\ConcreteEvaluation\\GetEvaluationStatisticsQueryHandler.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAcwCYAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T09:22:33.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StatisticsRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Request\\Statistics\\StatisticsRequest.cs",
+              "RelativeDocumentMoniker": "Presentation\\Contracts\\Request\\Statistics\\StatisticsRequest.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Presentation\\Contracts\\Request\\Statistics\\StatisticsRequest.cs",
+              "RelativeToolTip": "Presentation\\Contracts\\Request\\Statistics\\StatisticsRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T09:40:52.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StatisticsDto.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Common\\DTOs\\StatisticsDto.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\DTOs\\StatisticsDto.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Common\\DTOs\\StatisticsDto.cs",
+              "RelativeToolTip": "Application\\Common\\DTOs\\StatisticsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T09:23:51.358Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "GetTeammatesByTeamIdQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Queries\\Team\\GetTeammatesByTeamIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Queries\\Team\\GetTeammatesByTeamIdQueryHandler.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Queries\\Team\\GetTeammatesByTeamIdQueryHandler.cs",
-              "RelativeToolTip": "Application\\Queries\\Team\\GetTeammatesByTeamIdQueryHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAB0AAAAAAAAAA==",
+              "Title": "EvaluationStatisticsFilter.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Common\\Enums\\EvaluationStatisticsFilter.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\Enums\\EvaluationStatisticsFilter.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Common\\Enums\\EvaluationStatisticsFilter.cs",
+              "RelativeToolTip": "Application\\Common\\Enums\\EvaluationStatisticsFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:18:06.912Z",
+              "WhenOpened": "2025-07-10T08:53:42.741Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "TeamRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Team\\TeamRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistance\\Team\\TeamRepository.cs",
-              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Team\\TeamRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Persistance\\Team\\TeamRepository.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAA1wCEAAAAAAAAAAAAAAA==",
+              "Title": "ConcreteEvaluationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Evaluations\\ConcreteEvaluationRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistance\\Evaluations\\ConcreteEvaluationRepository.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Infrastructure\\Persistance\\Evaluations\\ConcreteEvaluationRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Persistance\\Evaluations\\ConcreteEvaluationRepository.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAuwIgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T07:12:47.462Z",
+              "WhenOpened": "2025-07-10T08:48:48.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IConcreteEvaluationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Common\\Repositories\\IConcreteEvaluationRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\Repositories\\IConcreteEvaluationRepository.cs",
+              "ToolTip": "C:\\Users\\Thinkpad\\Desktop\\employee-review-management-system\\Application\\Common\\Repositories\\IConcreteEvaluationRepository.cs",
+              "RelativeToolTip": "Application\\Common\\Repositories\\IConcreteEvaluationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T08:48:50.489Z",
               "EditorCaption": ""
             }
           ]

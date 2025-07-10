@@ -3,6 +3,7 @@ using Application.Common.Repositories;
 using Domain.Models.Evaluations;
 using Domain.Models.Evaluations.EvaluationComponents;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.InteropServices;
 
 namespace Infrastructure.Persistance.Evaluations
 {
@@ -115,6 +116,38 @@ namespace Infrastructure.Persistance.Evaluations
                 .Include("EvaluationPeriod")
                 .Include("Evaluation")
                 .ToListAsync();
+        }
+
+        public async Task<long> GetEvaluationCount(long cycleId, long teamId, EvaluationStatisticsFilter filter)
+        {
+            long count = 0L;
+            IQueryable<ConcreteEvaluation> query = _context.ConcreteEvaluations;
+
+            if (cycleId != 0)
+            {
+                query = query.Where(ce => ce.EvaluationPeriodId == cycleId);
+            }
+
+            if (teamId != 0)
+            {
+                query = query.Where(ce => ce.TeamId == teamId);
+            }
+
+            switch (filter)
+            {
+                case EvaluationStatisticsFilter.PENDING:
+                    query = query.Where(ce => ce.Pending == true && ce.EvaluationPeriod.EndDate >= DateOnly.FromDateTime(DateTime.Now));
+                    break;
+                case EvaluationStatisticsFilter.MISSED:
+                    query = query.Where(ce => ce.Pending == true && ce.EvaluationPeriod.EndDate < DateOnly.FromDateTime(DateTime.Now));
+                    break;
+                case EvaluationStatisticsFilter.SUBMITTED:
+                    query = query.Where(ce => ce.Pending == false);
+                    break;
+            }
+
+            var result = await query.ToListAsync();
+            return result.Count();
         }
     }
 }
