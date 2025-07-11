@@ -124,7 +124,7 @@ namespace Application.Commands.EvaluationPeriod
                 }
                 catch (Exception ex)
                 {
-
+                    Trace.WriteLine($"E-mail address {user.Email} couldn't be found!");
                 }
             }
             #endregion
@@ -150,21 +150,7 @@ namespace Application.Commands.EvaluationPeriod
                         
                     };
 
-                    List<Response> responses = new List<Response>();
-                    foreach (var question in eval.Questions)
-                    {
-                        responses.Add(new Response
-                        {
-                            Type = question.Type == Domain.Enums.Question.QuestionType.SCALAR
-                                ? Domain.Enums.Response.ResponseType.SCALAR
-                                : Domain.Enums.Response.ResponseType.TEXT,
-
-                            QuestionId = question.Id,
-                            Content = "",
-                        });
-                    }
-
-                    newEvaluation.Responses = responses;
+                    newEvaluation.Responses = GenerateResponses(eval.Questions);
                     resultList.Add(newEvaluation);
                 }
             }
@@ -178,39 +164,26 @@ namespace Application.Commands.EvaluationPeriod
             {
                 foreach (var membership1 in team.Memberships)
                 {
-                    if (membership1.IsTeamLead)
+                    if (!membership1.IsTeamLead)
+                        continue;
+
+                    foreach (var membership2 in team.Memberships)
                     {
-                        foreach (var membership2 in team.Memberships)
+                        if (membership1.UserId == membership2.UserId)
+                            continue;
+
+                        Domain.Models.Evaluations.ConcreteEvaluation newEvaluation = new Domain.Models.Evaluations.ConcreteEvaluation
                         {
-                            if (membership1.UserId == membership2.UserId)
-                                continue;
+                            Pending = true,
+                            Team = team,
+                            Evaluation = eval,
+                            Reviewer = membership1.User,
+                            Reviewee = membership2.User,
+                            EvaluationPeriod = evalPeriod
+                        };
 
-                            Domain.Models.Evaluations.ConcreteEvaluation newEvaluation = new Domain.Models.Evaluations.ConcreteEvaluation
-                            {
-                                Pending = true,
-                                Team = team,
-                                Evaluation = eval,
-                                Reviewer = membership1.User,
-                                Reviewee = membership2.User,
-                                EvaluationPeriod = evalPeriod
-                            };
-
-                            List<Response> responses = new List<Response>();
-                            foreach (var question in eval.Questions)
-                            {
-                                responses.Add(new Response
-                                {
-                                    Type = question.Type == Domain.Enums.Question.QuestionType.SCALAR
-                                        ? Domain.Enums.Response.ResponseType.SCALAR
-                                        : Domain.Enums.Response.ResponseType.TEXT,
-
-                                    QuestionId = question.Id,
-                                    Content = "",
-                                });
-                            }
-                            newEvaluation.Responses = responses;
-                            resultList.Add(newEvaluation);
-                        }
+                        newEvaluation.Responses = GenerateResponses(eval.Questions);
+                        resultList.Add(newEvaluation);
                     }
                 }
             }
@@ -224,50 +197,57 @@ namespace Application.Commands.EvaluationPeriod
             {
                 foreach (var membership1 in team.Memberships)
                 {
-                    if (!membership1.IsTeamLead)
+                    if (membership1.IsTeamLead)
                     {
+                        continue;
+                    }
 
-                        foreach (var membership2 in team.Memberships)
+                    foreach (var membership2 in team.Memberships)
+                    {
+                        if (membership1.UserId == membership2.UserId)
+                            continue;
+
+                        if (membership2.IsTeamLead)
+                            continue;
+
+                        Domain.Models.Evaluations.ConcreteEvaluation newEvaluation = new Domain.Models.Evaluations.ConcreteEvaluation
                         {
-                            if (membership1.UserId == membership2.UserId)
-                                continue;
+                            Pending = true,
+                            Team = team,
+                            Evaluation = eval,
+                            Reviewer = membership1.User,
+                            Reviewee = membership2.User,
+                            EvaluationPeriod = evalPeriod
+                        };
 
-                            if (membership2.IsTeamLead)
-                                continue;
-
-                            Domain.Models.Evaluations.ConcreteEvaluation newEvaluation = new Domain.Models.Evaluations.ConcreteEvaluation
-                            {
-                                Pending = true,
-                                Team = team,
-                                Evaluation = eval,
-                                Reviewer = membership1.User,
-                                Reviewee = membership2.User,
-                                EvaluationPeriod = evalPeriod
-                            };
-
-                            List<Response> responses = new List<Response>();
-                            foreach (var question in eval.Questions)
-                            {
-                                responses.Add(new Response
-                                {
-                                    Type = question.Type == Domain.Enums.Question.QuestionType.SCALAR
-                                        ? Domain.Enums.Response.ResponseType.SCALAR
-                                        : Domain.Enums.Response.ResponseType.TEXT,
-
-                                    QuestionId = question.Id,
-                                    Content = "",
-                                });
-                            }
-
-                            newEvaluation.Responses = responses;
-                            resultList.Add(newEvaluation);
-                        }
+                        newEvaluation.Responses = GenerateResponses(eval.Questions);
+                        resultList.Add(newEvaluation);
                     }
                 }
             }
 
             return resultList;
         }
+    
+        private List<Domain.Models.Evaluations.EvaluationComponents.Response> GenerateResponses(IEnumerable<Question> questions)
+        {
+            List<Response> responses = new List<Response>();
+            foreach (var question in questions)
+            {
+                responses.Add(new Response
+                {
+                    Type = question.Type == Domain.Enums.Question.QuestionType.SCALAR
+                        ? Domain.Enums.Response.ResponseType.SCALAR
+                        : Domain.Enums.Response.ResponseType.TEXT,
+
+                    QuestionId = question.Id,
+                    Content = "",
+                });
+            }
+
+            return responses;
+        }
+    
     }
     // We are using records to represent DTOs which because of their immutablity feature, since we don't want to modify
     // the request data while transfering it to the handler.
